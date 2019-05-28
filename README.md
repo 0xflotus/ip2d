@@ -1,5 +1,7 @@
 ## ip2d
 
+It's a simple lightweight zero cost library to convert an IP address to a decimal value and vice versa.
+
 ### Usage
 
 ```javascript
