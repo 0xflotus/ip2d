@@ -8,7 +8,8 @@
     "url": "https://github.com/0xflotus/ip2d.git"
   },
   "scripts": {
-    "prepublish": "tsc index.ts"
+    "prepublish": "tsc index.ts",
+    "test": "node test.js"
   },
   "license": "MIT",
   "devDependencies": {
