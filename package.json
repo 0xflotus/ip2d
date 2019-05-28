@@ -1,0 +1,11 @@
+{
+  "name": "ip2d",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "0xflotus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xflotus/ip2d.git"
+  },
+  "license": "MIT"
+}
