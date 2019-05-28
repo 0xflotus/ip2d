@@ -1,6 +1,6 @@
 {
   "name": "ip2d",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "0xflotus",
   "repository": {
@@ -8,11 +8,13 @@
     "url": "https://github.com/0xflotus/ip2d.git"
   },
   "scripts": {
-    "prepublish": "tsc index.ts",
+    "prepublish": "test",
+    "pretest": "tsc *.ts",
     "test": "node test.js"
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^12.0.2",
     "typescript": "^3.4.5"
   }
 }
