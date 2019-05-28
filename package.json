@@ -8,7 +8,7 @@
     "url": "https://github.com/0xflotus/ip2d.git"
   },
   "scripts": {
-    "prepublish": "test",
+    "prepublish": "yarn test",
     "pretest": "tsc *.ts",
     "test": "node test.js"
   },
