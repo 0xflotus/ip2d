@@ -14,7 +14,11 @@
         "doc",
         "code",
         "test",
-        "projectManagement"
+        "projectManagement",
+        "infra",
+        "maintenance",
+        "platform",
+        "security"
       ]
     }
   ],
