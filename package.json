@@ -1,6 +1,6 @@
 {
   "name": "ip2d",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "author": "0xflotus",
   "repository": {
@@ -8,8 +8,8 @@
     "url": "https://github.com/0xflotus/ip2d.git"
   },
   "scripts": {
-    "prepublish": "yarn test",
-    "test": "jest"
+    "prepare": "tsc index.ts",
+    "prepublishOnly": "jest"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,5 +17,21 @@
     "@types/node": "^12.0.2",
     "jest": "^24.8.0",
     "typescript": "^3.4.5"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 0
+      }
+    },
+    "displayName": {
+      "name": "ip2d-test",
+      "color": "grey"
+    }
   }
 }
