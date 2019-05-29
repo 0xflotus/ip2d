@@ -1,5 +1,7 @@
 .all-contributorsrc
 
-test.js
+jest.config.js
 tsconfig.json
 *.ts
+
+coverage/
