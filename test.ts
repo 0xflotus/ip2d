@@ -27,4 +27,5 @@ test("should also be 9.9.9.9", () => {
 
 test("arithmetic example", () => {
   expect(from_str("10.10.3.2") + 12).toBe(from_str("10.10.3.14"));
+  expect(to_str(from_str("3.5.22.9") + 4)).toBe("3.5.22.13");
 });
