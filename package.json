@@ -9,7 +9,8 @@
   },
   "scripts": {
     "prepare": "tsc index.ts",
-    "prepublishOnly": "jest"
+    "prepublishOnly": "jest",
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
