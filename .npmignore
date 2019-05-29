@@ -1,7 +1,6 @@
-.all-contributorsrc
+*
 
-jest.config.js
-tsconfig.json
-*.ts
-
-coverage/
+!index.js
+!LICENSE
+!README.md
+!package.json
