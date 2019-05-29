@@ -19,7 +19,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://github.com/0xflotus"><img src="https://avatars3.githubusercontent.com/u/26602940?v=4" width="100px;" alt="0xflotus"/><br /><sub><b>0xflotus</b></sub></a><br /><a href="https://github.com/0xflotus/ip2d/commits?author=0xflotus" title="Documentation">📖</a> <a href="https://github.com/0xflotus/ip2d/commits?author=0xflotus" title="Code">💻</a> <a href="https://github.com/0xflotus/ip2d/commits?author=0xflotus" title="Tests">⚠️</a> <a href="#projectManagement-0xflotus" title="Project Management">📆</a> <a href="#infra-0xflotus" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-0xflotus" title="Maintenance">🚧</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/0xflotus"><img src="https://avatars3.githubusercontent.com/u/26602940?v=4" width="100px;" alt="0xflotus"/><br /><sub><b>0xflotus</b></sub></a><br /><a href="https://github.com/0xflotus/ip2d/commits?author=0xflotus" title="Documentation">📖</a> <a href="https://github.com/0xflotus/ip2d/commits?author=0xflotus" title="Code">💻</a> <a href="https://github.com/0xflotus/ip2d/commits?author=0xflotus" title="Tests">⚠️</a> <a href="#projectManagement-0xflotus" title="Project Management">📆</a> <a href="#infra-0xflotus" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-0xflotus" title="Maintenance">🚧</a> <a href="#platform-0xflotus" title="Packaging/porting to new platform">📦</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
