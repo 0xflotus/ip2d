@@ -24,3 +24,7 @@ test("Should be 151587081", () => {
 test("should also be 9.9.9.9", () => {
   expect(to_str(0x09090909)).toBe("9.9.9.9");
 });
+
+test("arithmetic example", () => {
+  expect(from_str("10.10.3.2") + 12).toBe(from_str("10.10.3.14"));
+});
