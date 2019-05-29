@@ -20,3 +20,7 @@ test("Should be 9.9.9.9", () => {
 test("Should be 151587081", () => {
   expect(from_str("9.9.9.9")).toBe(151587081);
 });
+
+test("should also be 9.9.9.9", () => {
+  expect(to_str(0x09090909)).toBe("9.9.9.9");
+});
