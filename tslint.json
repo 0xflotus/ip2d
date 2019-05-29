@@ -10,7 +10,8 @@
     "max-line-length": {
       "options": [120]
     },
-    "no-any": true
+    "no-any": true,
+    "no-empty": [true, "allow-empty-catch", "allow-empty-functions"]
   },
   "rulesDirectory": []
 }
