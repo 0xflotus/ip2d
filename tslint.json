@@ -13,7 +13,8 @@
     "no-any": true,
     "no-empty": [true, "allow-empty-catch", "allow-empty-functions"],
     "radix": true,
-    "no-var-requires": false
+    "no-var-requires": false,
+    "trailing-comma": false
   },
   "rulesDirectory": []
 }
