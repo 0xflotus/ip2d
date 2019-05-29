@@ -12,3 +12,11 @@ test("should be 127.0.0.1", () => {
 test("should be 2130706433", () => {
   expect(from_str("127.0.0.1")).toBe(2130706433);
 });
+
+test("Should be 9.9.9.9", () => {
+  expect(to_str(151587081)).toBe("9.9.9.9");
+});
+
+test("Should be 151587081", () => {
+  expect(from_str("9.9.9.9")).toBe(151587081);
+});
