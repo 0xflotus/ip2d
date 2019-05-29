@@ -11,7 +11,8 @@
       "options": [120]
     },
     "no-any": true,
-    "no-empty": [true, "allow-empty-catch", "allow-empty-functions"]
+    "no-empty": [true, "allow-empty-catch", "allow-empty-functions"],
+    "radix": true
   },
   "rulesDirectory": []
 }
