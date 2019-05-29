@@ -9,7 +9,8 @@
   "rules": {
     "max-line-length": {
       "options": [120]
-    }
+    },
+    "no-any": true
   },
   "rulesDirectory": []
 }
