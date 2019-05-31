@@ -14,7 +14,11 @@
     "test": "jest test.ts",
     "posttest": "yarn run size",
     "lint": "tslint index.ts",
-    "size": "bundlesize -f index.js -s 512"
+    "size": "bundlesize --files index.js --max-size 0.5kb --compression none",
+    "postsize": "yarn run sizeGzip",
+    "sizeGzip": "bundlesize --files index.js --max-size 0.25kb --compression gzip",
+    "postsizeGzip": "yarn run sizeBrotli",
+    "sizeBrotli": "bundlesize --files index.js --max-size 0.2kb --compression brotli"
   },
   "license": "MIT",
   "devDependencies": {
