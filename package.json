@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepare": "tsc index.ts",
-    "prepublishOnly": "jest",
+    "prepublishOnly": "yarn run test",
     "pretest": "yarn run lint",
     "test": "jest test.ts",
     "posttest": "yarn run size",
