@@ -1,0 +1,9 @@
+[
+    {
+        "webpack": false,
+        "path": "./index.js",
+        "running": false,
+        "gzip": false,
+        "limit": "15 ms"
+    }
+]
