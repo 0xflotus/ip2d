@@ -1,0 +1,13 @@
+name: ip2d
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+    - name: compressed-size-action
+      uses: preactjs/compressed-size-action@v1
