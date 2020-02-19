@@ -8,6 +8,7 @@
     "url": "https://github.com/0xflotus/ip2d.git"
   },
   "scripts": {
+    "build": "tsc index.ts",
     "prepare": "tsc index.ts",
     "prepublishOnly": "yarn run test",
     "pretest": "yarn run lint",
