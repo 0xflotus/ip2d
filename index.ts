@@ -1,6 +1,11 @@
+import { isIPv4 } from "net";
+
 type IPAddress = string;
 
 export function from_str(str: IPAddress): number {
+  if (!isIPv4(str)) {
+    throw new Error("str should be a valid IPv4 address.");
+  }
   return str
     .split(".")
     .map(Number)

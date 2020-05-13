@@ -22,6 +22,20 @@ test("Should be 151587081", () => {
   expect(from_str("9.9.9.9")).toBe(151587081);
 });
 
+test("should throw error", () => {
+  expect(() => from_str("test")).toThrow();
+});
+
+test("should be the same", () => {
+  expect(to_str(4294967295)).toBe("255.255.255.255");
+  expect(to_str(0xffffffff)).toBe("255.255.255.255");
+  expect(to_str(-1)).toBe("255.255.255.255");
+});
+
+test("should be 9.9.9.8", () => {
+  expect(to_str(0xff09090908)).toBe("9.9.9.8");
+});
+
 test("should also be 9.9.9.9", () => {
   expect(to_str(0x09090909)).toBe("9.9.9.9");
 });

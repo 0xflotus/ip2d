@@ -1,6 +1,6 @@
 {
   "name": "ip2d",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "index.js",
   "author": "0xflotus",
   "repository": {
@@ -17,9 +17,9 @@
     "lint": "tslint index.ts",
     "size": "bundlesize --files index.js --max-size 0.5kb --compression none",
     "postsize": "yarn run sizeGzip",
-    "sizeGzip": "bundlesize --files index.js --max-size 0.25kb --compression gzip",
+    "sizeGzip": "bundlesize --files index.js --max-size 0.3kb --compression gzip",
     "postsizeGzip": "yarn run sizeBrotli",
-    "sizeBrotli": "bundlesize --files index.js --max-size 0.2kb --compression brotli"
+    "sizeBrotli": "bundlesize --files index.js --max-size 0.3kb --compression brotli"
   },
   "license": "MIT",
   "devDependencies": {
