@@ -18,6 +18,11 @@ console.log(from("127.0.0.1")); // --> 2130706433
 console.log(to(2130706433)); // --> 127.0.0.1
 ```
 
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/0xflotus/ip2d.svg)](https://starchart.cc/0xflotus/ip2d)
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
