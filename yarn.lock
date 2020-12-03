@@ -494,10 +494,10 @@
     "@size-limit/file" "4.9.0"
     "@size-limit/webpack" "4.9.0"
 
-"@size-limit/time@^4.9.0":
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-4.9.0.tgz#f8bd5816385cd811871eb8ca2f136a16262d7e0b"
-  integrity sha512-qXSbchxxduSCw39JMry4xgm96iE0ACEjIKg2MEMZMkpAQQhWREUH0P9cqPZ4rrf6A7aau5VKw+UrwtgEQSH6tQ==
+"@size-limit/time@^4.9.1":
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-4.9.1.tgz#c8f4e2fe7930da381fa7298a93c7a0147964c661"
+  integrity sha512-M8eAtCB/XitCgkGiPevj0XNmBuosYPQKBF0iyxDm0TOWUS3Fu56rW368xL3xOgd3SO0PS4j3fYTXbCnZfugKfg==
   dependencies:
     estimo "^2.2.1"
     react "^17.0.1"
