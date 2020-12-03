@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.9.0",
+    "@size-limit/preset-small-lib": "^4.9.1",
     "@size-limit/time": "^4.9.1",
     "@types/jest": "^26.0.16",
     "@types/node": "^14.14.10",
