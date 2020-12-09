@@ -9,12 +9,17 @@ It's a simple lightweight zero cost library to convert an IP address to a decima
 ### Usage
 
 ```javascript
-const {from_str, to_str} = require("ip2d");
+const {from, to} = require("ip2d");
 
-console.log(from_str("127.0.0.1")); // --> 2130706433
+console.log(from("127.0.0.1")); // --> 2130706433
 
-console.log(to_str(2130706433)); // --> 127.0.0.1
+console.log(to(2130706433)); // --> 127.0.0.1
 ```
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/0xflotus/ip2d.svg)](https://starchart.cc/0xflotus/ip2d)
 
 ## Contributors
 

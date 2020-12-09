@@ -15,23 +15,23 @@
     "test": "jest test.ts",
     "posttest": "yarn run size",
     "lint": "tslint index.ts",
-    "size": "bundlesize --files index.js --max-size 0.5kb --compression none",
+    "size": "bundlesize --files index.js --max-size 1kb --compression none",
     "postsize": "yarn run sizeGzip",
-    "sizeGzip": "bundlesize --files index.js --max-size 0.3kb --compression gzip",
+    "sizeGzip": "bundlesize --files index.js --max-size 0.5kb --compression gzip",
     "postsizeGzip": "yarn run sizeBrotli",
-    "sizeBrotli": "bundlesize --files index.js --max-size 0.3kb --compression brotli"
+    "sizeBrotli": "bundlesize --files index.js --max-size 0.5kb --compression brotli"
   },
   "license": "MIT",
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.4.4",
-    "@size-limit/time": "^4.4.4",
-    "@types/jest": "^25.1.4",
-    "@types/node": "^13.9.8",
-    "axios": "^0.19.2",
+    "@size-limit/preset-small-lib": "^4.9.1",
+    "@size-limit/time": "^4.9.1",
+    "@types/jest": "^26.0.17",
+    "@types/node": "^14.14.10",
+    "axios": "^0.21.0",
     "bundlesize": "^0.18.0",
-    "jest": "^25.2.4",
+    "jest": "^26.6.3",
     "tslint": "^6.1.1",
-    "typescript": "^3.8.3",
+    "typescript": "^4.1.2",
     "yarn": "^1.22.4"
   },
   "jest": {
