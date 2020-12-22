@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "10"
+  - "11"
   - "12"
   - "13"
   - "14"
@@ -10,5 +11,12 @@ os:
   - "linux"
   - "windows"
   - "freebsd"
+jobs:
+  allow_failures:
+  - os:
+    - "windows"
+    - "freebsd"
+  - node_js:
+    - "11"
 cache:
   yarn: true
