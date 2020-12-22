@@ -13,10 +13,11 @@ os:
   - "freebsd"
 jobs:
   allow_failures:
-  - os:
-    - "windows"
-    - "freebsd"
-  - node_js:
-    - "11"
+    - os: 
+      - "windows"
+    - node_js:
+      - 11
+    - os: 
+      - "freebsd"
 cache:
   yarn: true
