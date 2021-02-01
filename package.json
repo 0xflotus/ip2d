@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.9.1",
-    "@size-limit/time": "^4.9.1",
+    "@size-limit/time": "^4.9.2",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.22",
     "axios": "^0.21.1",
