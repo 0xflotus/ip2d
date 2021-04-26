@@ -20,6 +20,7 @@ test("Should be 9.9.9.9", () => {
 
 test("Should be 151587081", () => {
   expect(from("9.9.9.9")).toBe(151587081);
+  expect(from("9.9.9.8")).toBe(151587080);
 });
 
 test("should throw error", () => {
