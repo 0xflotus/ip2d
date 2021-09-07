@@ -27,7 +27,7 @@
     "@size-limit/time": "^5.0.3",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.12",
-    "axios": "^0.21.3",
+    "axios": "^0.21.4",
     "bundlesize": "^0.18.1",
     "jest": "^27.1.0",
     "tslint": "^6.1.1",
