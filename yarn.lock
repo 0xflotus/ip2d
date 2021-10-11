@@ -710,10 +710,10 @@
     "@size-limit/file" "5.0.5"
     "@size-limit/webpack" "5.0.5"
 
-"@size-limit/time@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-5.0.5.tgz#7a52dea73d7eea29c1d7bebc6b3ef3b514ae9b69"
-  integrity sha512-uPm2HDmaselU/iGk/IONVqxUuXcJuyh1uh+Duc76ewJcMZNuPcIi0pk2AQ3Dc8lMXcGJFLn4zO50/caNG/nmbA==
+"@size-limit/time@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-6.0.1.tgz#f8e695945358a5419bfafb7fb19694947504a5c7"
+  integrity sha512-ERupjIlhPMa0i71Pu9SZgOGy8VOflIxVKhTEC8Z8LGSi6m3Ycks9A+ZMj6fyJ0EovbHtbRyX9BPdPk3m9I6P/Q==
   dependencies:
     estimo "^2.2.8"
     react "^17.0.2"
