@@ -26,7 +26,7 @@
     "@size-limit/preset-small-lib": "^7.0.0",
     "@size-limit/time": "^7.0.0",
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.7",
+    "@types/node": "^16.11.8",
     "axios": "^0.24.0",
     "bundlesize": "^0.18.1",
     "jest": "^27.3.1",
