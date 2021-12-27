@@ -690,28 +690,28 @@
   dependencies:
     debug "^4.1.1"
 
-"@size-limit/esbuild@7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@size-limit/esbuild/-/esbuild-7.0.4.tgz#8f769c4e47c34711babf9148dc755fb22c4d6b3f"
-  integrity sha512-gfkr96LQ8zCWKDGTfnBed8K4kmQccB/cQxnqK7bMis/X0qSpeMFwDG9WO9JrjDgNRVjbncB26Qtnain58KC2Xw==
+"@size-limit/esbuild@7.0.5":
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/@size-limit/esbuild/-/esbuild-7.0.5.tgz#1f02a0d41482a349bb66e8b050f2f4d904ad131a"
+  integrity sha512-ec/XfgTHcfXFflEDgs83gs3XMfB8sn4BISZM7CPHCS72tNkcjVwNRxrKWisb11JZ2kN4glBgCmsXZpoSaEGzXg==
   dependencies:
-    esbuild "^0.14.2"
+    esbuild "^0.14.8"
     nanoid "^3.1.30"
 
-"@size-limit/file@7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-7.0.4.tgz#b6c8b5ad57db2b4488ffb2907d1876ad0197cb0b"
-  integrity sha512-/UfiOp8bDIdmNs0c8IQgGKlByo1esoayZ6+Pr/LQCJPZWPyQWVeGTo+J/+aYa9+5+r6ezvmAF5aR7VVt+rvW2Q==
+"@size-limit/file@7.0.5":
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-7.0.5.tgz#e8c8a610f2df408dba02a38dc283666db81948b0"
+  integrity sha512-DqyuUkmCSHwML6GVmeRr0v6Ih/P3pwmCu6RDWh2QxdDSec1ZnShmFUmcC6rLQDX7KW5aCjK3cs5FNd22Eaqapw==
   dependencies:
     semver "7.3.5"
 
-"@size-limit/preset-small-lib@^7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@size-limit/preset-small-lib/-/preset-small-lib-7.0.4.tgz#d6d1771fdfbde03e81430ac097354f9d5dd29754"
-  integrity sha512-FS3qDDfcks3ZNKciGYxhSfiyVIQ64N6oZZABsWneHvZjOpR6KUjwPVboX2rBZGKT2an1KHs5CkHoM+oscxGWEw==
+"@size-limit/preset-small-lib@^7.0.5":
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/@size-limit/preset-small-lib/-/preset-small-lib-7.0.5.tgz#f55f66c5d77b5b8fb8f3d66893a3939aa33ae6ae"
+  integrity sha512-cWwXDCx9BEpHIjbpHlhpS0JBt+J1U5LCaHHyBhAxevOX7W0aX7nCJwPUmd5liGHq9ui5VyWOtV3lhxce96Qd8A==
   dependencies:
-    "@size-limit/esbuild" "7.0.4"
-    "@size-limit/file" "7.0.4"
+    "@size-limit/esbuild" "7.0.5"
+    "@size-limit/file" "7.0.5"
 
 "@size-limit/time@^7.0.4":
   version "7.0.4"
@@ -1587,7 +1587,7 @@ esbuild-windows-arm64@0.14.8:
   resolved "https://registry.yarnpkg.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.8.tgz#512d06097cb4b848526a37c48a47223f1c6cc667"
   integrity sha512-lTm5naoNgaUvzIiax3XYIEebqwr3bIIEEtqUhzQ2UQ+JMBmvhr02w3sJIJqF3axTX6TgWrC1OtM7DYNvFG+aXA==
 
-esbuild@^0.14.2:
+esbuild@^0.14.8:
   version "0.14.8"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.14.8.tgz#f60a07ca9400d61d09a98f96d666c50613972550"
   integrity sha512-stMsCBmxwaMpeK8GC/49L/cRGIwsHwoEN7Twk5zDTHlm/63c0KXFKzDC8iM2Mi3fyCKwS002TAH6IlAvqR6t3g==
