@@ -1,4 +1,4 @@
-const { from, to} = require("./");
+const { from, to, from6 } = require("./");
 
 test("Should be the same", () => {
   expect(from(to(1))).toBe(1);
@@ -45,4 +45,14 @@ test("arithmetic example", () => {
   expect(from("10.10.3.2") + 12).toBe(from("10.10.3.14"));
   expect(to(from("3.5.22.9") + 4)).toBe("3.5.22.13");
   expect(to(from("3.5.22.255") + 2)).toBe("3.5.23.1");
+});
+
+test("should be 1 and 2 and 11", () => {
+  expect(from6("::1")).toBe(1);
+  expect(from6("::2")).toBe(2);
+  expect(from6("::b")).toBe(11);
+});
+
+test("should be 15663343", () => {
+  expect(from6("ef:ee::1")).toBe(15663343);
 });

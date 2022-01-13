@@ -49,5 +49,8 @@
       "name": "ip2d-test",
       "color": "grey"
     }
+  },
+  "dependencies": {
+    "ip6": "^0.2.7"
   }
 }
