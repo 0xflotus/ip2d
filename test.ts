@@ -54,5 +54,5 @@ test("should be 1 and 2 and 11", () => {
 });
 
 test("should be 15663343", () => {
-  expect(from6("ef:ee::1")).toBe(15663343);
+  expect(from6("ef:ee::1:1")).toBe(1240977805492502198131135886143782913 % Number.MAX_SAFE_INTEGER);
 });

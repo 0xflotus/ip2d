@@ -25,12 +25,13 @@ export const from6 = (str: IP6Address): number => {
   const a = normalize(str)
     .split(':')
     .map((hex: string) => Number(`0x${hex}`));
-  a[0] = a[0] << 112;
-  a[1] = a[1] << 96;
-  a[2] = a[2] << 80;
-  a[3] = a[3] << 64;
-  a[4] = a[4] << 48;
-  a[5] = a[5] << 32;
-  a[6] = a[6] << 16;
+  a[0] = a[0] << 0x70;
+  a[1] = a[1] << 0x60;
+  a[2] = a[2] << 0x50;
+  a[3] = a[3] << 0x40;
+  a[4] = a[4] << 0x30;
+  a[5] = a[5] << 0x20;
+  a[6] = a[6] << 0x10;
+  a[7] = a[7] << 0x00;
   return a.reduce((a: number, b: number) => a | b);
 }
