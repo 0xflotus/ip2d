@@ -25,7 +25,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
     "@size-limit/time": "^7.0.8",
-    "@types/jest": "^27.5.1",
+    "@types/jest": "^28.1.0",
     "@types/node": "^17.0.38",
     "axios": "^0.27.2",
     "bundlesize": "^0.18.1",
