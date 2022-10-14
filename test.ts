@@ -44,5 +44,5 @@ test("should also be 9.9.9.9", () => {
 test("arithmetic example", () => {
   expect(from("10.10.3.2") + 12).toBe(from("10.10.3.14"));
   expect(to(from("3.5.22.9") + 4)).toBe("3.5.22.13");
-  expect(to(from("3.5.22.255") + 2)).toBe("3.5.23.1");
+  expect(to(from("3.5.22.255") + 22)).toBe("3.5.23.21");
 });
