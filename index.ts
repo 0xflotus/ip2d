@@ -1,6 +1,6 @@
 import { isIPv4 } from "net";
 
-type IPAddress = string;
+type IPv4Address = string;
 
 export const from = (str: IPAddress): number => {
   if (!isIPv4(str)) {
