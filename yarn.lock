@@ -970,10 +970,10 @@
     "@size-limit/esbuild" "8.1.1"
     "@size-limit/file" "8.1.1"
 
-"@size-limit/time@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-8.1.0.tgz#3703363dd8b042da1bd99182ccfb95932bd737e3"
-  integrity sha512-rOfIqpq8RSjKUnByJcWr2qw8XBTo3DAL16lmzjILvzQBkKi1kgDHU4QVa9K/BehYqH+Lx3rA3pVFMrQ5aJsOkg==
+"@size-limit/time@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-8.1.1.tgz#fe7b50449dd952afdca91dd5a9f4c6d9df49d259"
+  integrity sha512-h1KUqoofcRLwmLIWHMeFHyoqQ0yhy9iq364tKe8T+dTsdwEjqZHjgCDTmkdzNsnJzjy9m6/ak9/CJ7aryjFQfQ==
   dependencies:
     estimo "^2.3.6"
     react "^17.0.2"
