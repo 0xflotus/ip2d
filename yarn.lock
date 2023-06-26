@@ -992,10 +992,10 @@
     "@size-limit/file" "8.2.6"
     size-limit "8.2.6"
 
-"@size-limit/time@^8.2.4":
-  version "8.2.4"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-8.2.4.tgz#e72372b77b667b4cebd84c32f66cda86efd05985"
-  integrity sha512-tQ5EFlN/AY8RLIJxURVfiwJpO4Q9UihtfE6c14fXL9Jy/wl2hZEhkFrUhRayNDvnZW8HWNko1Hmt7dLsY3iF8A==
+"@size-limit/time@^8.2.6":
+  version "8.2.6"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-8.2.6.tgz#5d1912bcfc6437f6f59804737ad0538b25c207ed"
+  integrity sha512-fUEPvz7Uq6+oUQxSYbNlJt3tTgQBl1VY21USi/B7ebdnVKLnUx1JyPI9v7imN6XEkB2VpJtnYgjFeLgNrirzMA==
   dependencies:
     estimo "^2.3.6"
     react "^17.0.2"
