@@ -18,7 +18,7 @@ jobs:
       - name: Testing with Node 17
         uses: actions/setup-node@v3.8.1
         with:
-          node-version: 16
+          node-version: 17
       - run: npm install
       - run: npm run build
       - run: npm test
