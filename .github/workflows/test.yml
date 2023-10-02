@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Testing with Node 16
+      - name: Testing with Node 17
         uses: actions/setup-node@v3.8.1
         with:
           node-version: 16
