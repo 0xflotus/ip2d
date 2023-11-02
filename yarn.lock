@@ -951,10 +951,10 @@
     "@size-limit/file" "10.0.1"
     size-limit "10.0.1"
 
-"@size-limit/time@^10.0.1":
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-10.0.1.tgz#edcc8944321680d8cc80775e456bdd3111f24836"
-  integrity sha512-E6dxXD+Z+2iW07oFsGGQEFZol/bjVWlM4B8XgMqbNShOeUWn4C2zg2tYrSvuSG2Vzyf9ov7fhDjJK9vX9C2n6w==
+"@size-limit/time@^10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-10.0.2.tgz#5a03b0b90e5d7dceeb3d0b91e96aed5ebf3f96c3"
+  integrity sha512-0YaQDTjrdrp671kyj8R7hxo72lwR3kleWuEIKMguKCNiPrpk5o+fE0CiQEAzuxkmmo+5O5saS72pG67o+ok+Ag==
   dependencies:
     estimo "^2.3.6"
 
