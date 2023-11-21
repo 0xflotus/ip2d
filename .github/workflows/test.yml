@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - '**.ts'
+      - package.json
   pull_request:
     branches: [master]
 
