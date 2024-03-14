@@ -1013,10 +1013,10 @@
     "@size-limit/file" "11.0.3"
     size-limit "11.0.3"
 
-"@size-limit/time@11.0.3":
-  version "11.0.3"
-  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-11.0.3.tgz#e150ead18e893468caa95c196849d58f68c6f3de"
-  integrity sha512-HBwpOS1gV/IPu24NUnqaxwomG92W//aydrpQQbY7aHy9YCxZpeDyqTeLdQ1vQcb2zqvhGok4oKgladQlPsQhmw==
+"@size-limit/time@11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@size-limit/time/-/time-11.1.0.tgz#0cd94d85a502c937cdb3ec9635f945b3e5a10dc1"
+  integrity sha512-/Ac1CCcbQOiwhTneQ2ItgGMZnMsHU1vfzBtTNKXWjHFf9NekPjvv/9jVzlBXzOGH4IZm30Fpof/7NudgfDbeyw==
   dependencies:
     estimo "^3.0.2"
 
