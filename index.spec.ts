@@ -59,6 +59,22 @@ test("should be 1", () => {
   expect(fromIPv6("::1")).toBe(BigInt(1));
 });
 
+test("should be 44996461372433492606259129078766914650", () => {
+  expect(fromIPv6("21DA:D4:0:2F4C:2BC:FF:FE18:4C5A")).toBe(BigInt(44996461372433492606259129078766914650));
+});
+
+test("should be 42541956123769884636017138956568135816", () => {
+  expect(fromIPv6("2001:4860:4860::8888")).toBe(BigInt(42541956123769884636017138956568135816));
+});
+
 test("should be ::1", () => {
   expect(toIPv6(BigInt(1))).toBe("::1");
+});
+
+test("should be 21DA:D4:0:2F4C:2BC:FF:FE18:4C5A", () => {
+  expect(toIPv6(BigInt(44996461372433492606259129078766914650))).toBe("21DA:D4:0:2F4C:2BC:FF:FE18:4C5A");
+});
+
+test("should be 2001:4860:4860::8888", () => {
+  expect(toIPv6(BigInt(42541956123769884636017138956568135816))).toBe("2001:4860:4860::8888");
 });
