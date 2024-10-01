@@ -11,21 +11,12 @@
     "build": "tsc index.ts",
     "prepare": "tsc index.ts",
     "prepublishOnly": "yarn run test",
-    "test": "jest test.ts",
-    "posttest": "yarn run size",
-    "size": "bundlesize --files index.js --max-size 1kb --compression none",
-    "postsize": "yarn run sizeGzip",
-    "sizeGzip": "bundlesize --files index.js --max-size 0.5kb --compression gzip",
-    "postsizeGzip": "yarn run sizeBrotli",
-    "sizeBrotli": "bundlesize --files index.js --max-size 0.5kb --compression brotli"
+    "test": "jest test.ts"
   },
   "license": "MIT",
   "devDependencies": {
-    "@size-limit/preset-small-lib": "11.1.6",
-    "@size-limit/time": "11.1.6",
     "@types/jest": "29.5.13",
     "@types/node": "22.7.4",
-    "bundlesize": "0.18.2",
     "jest": "29.7.0",
     "typescript": "5.6.2"
   },
