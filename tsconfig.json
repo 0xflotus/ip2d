@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
+    "lib": [
+      "es2020", 
+      "esnext"
+    ],
     "module": "commonjs",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": false,
-    "allowJs": true
-  }
+    "target": "es2020",
+  },
+  "files": [
+    "index.ts",
+    "index.spec.ts"
+  ]
 }
