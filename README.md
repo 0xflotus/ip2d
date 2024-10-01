@@ -27,7 +27,7 @@ npm install ip2d
 Convert an IPv4 address to its decimal form:
 
 ```javascript
-const { fromIPv4, toIPv4 } = require("ip2d");
+const { fromIPv4 } = require("ip2d");
 
 console.log(fromIPv4("127.0.0.1")); // Output: 2130706433
 ```
@@ -37,6 +37,8 @@ console.log(fromIPv4("127.0.0.1")); // Output: 2130706433
 Convert a decimal number back to an IPv4 address:
 
 ```javascript
+const { toIPv4 } = require("ip2d");
+
 console.log(toIPv4(2130706433)); // Output: "127.0.0.1"
 ```
 
