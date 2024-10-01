@@ -1,5 +1,4 @@
 ## ip2d
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![Known Vulnerabilities](https://snyk.io/test/github/0xflotus/ip2d/badge.svg?targetFile=package.json)](https://snyk.io/test/github/0xflotus/ip2d?targetFile=package.json)
 [![npm version](https://badge.fury.io/js/ip2d.svg)](https://badge.fury.io/js/ip2d)
 
