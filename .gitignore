@@ -3,4 +3,3 @@ coverage/
 *.js
 *.js.map
 !*.config.js
-yarn-error.log
