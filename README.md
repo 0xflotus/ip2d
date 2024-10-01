@@ -25,15 +25,15 @@ npm install ip2d
 Convert an IPv4 address to its decimal form:
 
 ```javascript
-const { from, to } = require("ip2d");
+const { fromIPv4, toIPv4 } = require("ip2d");
 
-console.log(from("127.0.0.1")); // Output: 2130706433
+console.log(fromIPv4("127.0.0.1")); // Output: 2130706433
 ```
 # Basic Decimal to IPv4 Conversion
 Convert a decimal number back to an IPv4 address:
 
 ```javascript
-console.log(to(2130706433)); // Output: "127.0.0.1"
+console.log(toIPv4(2130706433)); // Output: "127.0.0.1"
 ```
 
 # IPv6 to BigInt Conversion
@@ -41,7 +41,9 @@ Convert an IPv6 address string into a BigInt:
 
 ```typescript
 import { fromIPv6 } from "ip2d";
+
 const bigIntValue = fromIPv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
+
 console.log(bigIntValue);  // Output: A BigInt representation of the IPv6 address
 ```
 
@@ -52,6 +54,7 @@ Convert a BigInt back into an IPv6 address string:
 import { toIPv6 } from "ip2d";
 
 const ipv6Address = toIPv6(BigInt("42540766411282592856906245548098208148"));
+
 console.log(ipv6Address);  // Output: "2001:db8:85a3::8a2e:370:7334"
 ```
 

@@ -1,6 +1,32 @@
-import { isIPv6 } from "net";
+import { isIPv6, isIPv4 } from "net";
 
 type IPv6Address = string;
+type IPv4Address = string;
+
+/**
+ * Converts an IPv4 address string to a number.
+ * @param str - A valid IPv4 address as a string.
+ * @returns The IPv4 address as a number.
+ * @throws Error if the input is not a valid IPv4 address.
+ */
+export const fromIPv4 = (str: IPv4Address): number => {
+  if (!isIPv4(str)) {
+    throw new Error("str should be a valid IPv4 address.");
+  }
+  return str
+    .split(".")
+    .map(Number)
+    .reduce((a: number, b: number) => (a << 0x08) | b);
+}
+
+/**
+ * Converts a number back to an IPv4 address string.
+ * @param num - A number representing the IPv4 address.
+ * @returns The IPv4 address as a string.
+ */
+export const toIPv4 = (num: number): IPv4Address => {
+  return [0x18, 0x10, 0x08, 0x00].map((a: number) => (num >> a) & 0xFF).join(".");
+}
 
 /**
  * Converts an IPv6 address string to a BigInt.
@@ -23,8 +49,8 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
   }
 
   return sections.reduce((acc: bigint, section: string) => {
-    return (acc << 16n) + BigInt(parseInt(section || "0", 16));
-  }, 0n);
+    return (acc << BigInt(16)) + BigInt(parseInt(section || "0", 16));
+  }, BigInt(0));
 };
 
 /**
@@ -36,7 +62,7 @@ export const toIPv6 = (num: bigint): IPv6Address => {
   const sections = [];
 
   for (let i = 0; i < 8; i++) {
-    sections.unshift(((num >> BigInt(i * 16)) & 0xFFFFn).toString(16));
+    sections.unshift(((num >> BigInt(i * 16)) & BigInt(0xFFFF)).toString(16));
   }
 
   // Rebuilds the address while collapsing any consecutive sections of 0 into "::"
