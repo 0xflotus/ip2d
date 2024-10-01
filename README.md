@@ -80,9 +80,6 @@ You can view the full license [here](./LICENSE).
 
 [![Stargazers over time](https://starchart.cc/0xflotus/ip2d.svg)](https://starchart.cc/0xflotus/ip2d)
 
-This README includes detailed documentation and usage instructions for the `ip2d` library.
-
-
 
 
 
