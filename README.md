@@ -70,9 +70,6 @@ console.log(ipv6Address);  // Output: "2001:db8:85a3::8a2e:370:7334"
 
 The repository includes a `SECURITY.md` file for reporting vulnerabilities. The project also integrates with Snyk for checking known vulnerabilities in dependencies.
 
-```bash
-[![Known Vulnerabilities](https://snyk.io/test/github/0xflotus/ip2d/badge.svg?targetFile=package.json)](https://snyk.io/test/github/0xflotus/ip2d?targetFile=package.json)
-```
 ## License
 
 This library is licensed under the MIT License, allowing you to use, modify, and distribute the code with minimal restrictions.
