@@ -12,11 +12,11 @@
     "npm": ">= 10.8.2"
   },
   "scripts": {
-    "build": "tsc index.ts",
-    "prepare": "tsc index.ts",
+    "build": "tsc",
+    "prepare": "tsc",
     "prepublishOnly": "yarn run test",
-    "pretest": "tsc index.spec.ts",
-    "test": "jest index.spec.js",
+    "pretest": "tsc",
+    "test": "jest dist/index.spec.js",
     "lint": "eslint ."
   },
   "license": "MIT",
