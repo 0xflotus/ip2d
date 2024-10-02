@@ -1,7 +1,7 @@
 {
   "name": "ip2d",
   "version": "1.2.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "0xflotus",
   "repository": {
     "type": "git",
