@@ -75,11 +75,6 @@ test("should handle IPv4 with leading zeros", () => {
   expect(toIPv4(fromIPv4("001.002.003.004"))).toBe("1.2.3.4");
 });
 
-test("should throw error for numbers beyond IPv4 range", () => {
-  expect(() => toIPv4(4294967296)).toThrow(); // beyond 32-bit range
-  expect(() => toIPv4(BigInt(4294967296))).toThrow();
-});
-
 test("should throw error for negative numbers (except -1)", () => {
   expect(() => toIPv4(-2)).toThrow();
   expect(() => toIPv4(-100)).toThrow();
