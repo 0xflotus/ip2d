@@ -5,7 +5,7 @@
       "esnext"
     ],
     "module": "commonjs",
-    "target": "es2020",
+    "target": "esnext",
     "strict": true,                        // Enable strict type-checking
     "esModuleInterop": true,               // Ensure compatibility between CommonJS and ESModules
     "skipLibCheck": true,                  // Speed up compilation by skipping type checking in .d.ts files
