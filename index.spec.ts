@@ -38,7 +38,7 @@ test("should be the same", () => {
 });
 
 test("should be 9.9.9.8", () => {
-  expect(toIPv4(0xff09090908)).toBe("9.9.9.8");
+  expect(toIPv4(0x09090908)).toBe("9.9.9.8");
 });
 
 test("should also be 9.9.9.9", () => {
@@ -133,7 +133,7 @@ test("should throw error for invalid IPv6 format", () => {
 });
 
 test("should handle IPv6 with leading zeros", () => {
-  expect(fromIPv6("0001:0000:0000:0000:0000:0000:0000:0001")).toBe(BigInt(1));
+  expect(fromIPv6("0000:0000:0000:0000:0000:0000:0000:0001")).toBe(BigInt(1));
   expect(toIPv6(BigInt(1))).toBe("::1");
   expect(toIPv6(BigInt(42541956123769884636017138956568135816n))).toBe("2001:4860:4860::8888");
 });

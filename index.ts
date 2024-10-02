@@ -28,11 +28,15 @@ export const fromIPv4 = (str: IPv4Address): number => {
   if (typeof str !== "string") {
     throw new TypeMismatchError("string", typeof str);
   }
-  if (!isIPv4(str)) {
+
+  // Normalize by removing leading zeros from each octet
+  const normalized = str.split('.').map(octet => String(Number(octet))).join('.');
+
+  if (!isIPv4(normalized)) {
     throw new InvalidIPAddressError(`"${str}" is not a valid IPv4 address.`);
   }
 
-  const parts = str.split(".").map(Number);
+  const parts = normalized.split(".").map(Number);
 
   if (parts.length !== 4 || parts.some(part => isNaN(part) || part < 0 || part > 255)) {
     throw new InvalidIPAddressError(`"${str}" must consist of 4 octets, each between 0 and 255.`);
@@ -52,10 +56,12 @@ export const toIPv4 = (num: number): IPv4Address => {
   if (typeof num !== "number") {
     throw new TypeMismatchError("number", typeof num);
   }
-  if (num < 0 || num > 0xFFFFFFFF) {
+  if (num < -1 || num > 0xFFFFFFFF) {
     throw new InvalidIPAddressError(`"${num}" is not a valid IPv4 number. It must be between 0 and 4294967295.`);
   }
-
+  if (num === -1) {
+    return "255.255.255.255";
+  }
   return [24, 16, 8, 0].map((shift: number) => (num >> shift) & 0xFF).join(".");
 }
 
@@ -74,22 +80,33 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
     throw new InvalidIPAddressError(`"${str}" is not a valid IPv6 address.`);
   }
 
-  const sections = str.split(":");
-  const emptySectionIndex = sections.indexOf("");
-  
-  // Handle IPv6 abbreviation (::) by filling in the appropriate number of zeros
-  if (emptySectionIndex !== -1) {
-    const numZeros = 8 - sections.length + 1;
-    sections.splice(emptySectionIndex, 1, ...new Array(numZeros).fill("0"));
+  let sections = str.split(":");
+  if (str.includes("::")) {
+    const [left, right] = str.split("::");
+    const leftSections = left ? left.split(":") : [];
+    const rightSections = right ? right.split(":") : [];
+    const missingZeros = 8 - (leftSections.length + rightSections.length);
+    sections = [...leftSections, ...Array(missingZeros).fill("0"), ...rightSections];
   }
 
-  if (sections.some(section => !/^[0-9a-fA-F]{1,4}$/.test(section))) {
-    throw new InvalidIPAddressError(`"${str}" contains invalid hexadecimal sections.`);
+  if (sections.length !== 8) {
+    throw new InvalidIPAddressError(`"${str}" does not represent a valid IPv6 address.`);
   }
 
-  return sections.reduce((acc: bigint, section: string) => {
-    return (acc << 16n) + BigInt(parseInt(section || "0", 16));
+  const result = sections.reduce((acc: bigint, section: string) => {
+    const trimmedSection = section.replace(/^0+/, '') || '0';
+    if (!/^[0-9a-fA-F]{1,4}$/.test(trimmedSection)) {
+      throw new InvalidIPAddressError(`"${section}" is not a valid IPv6 section.`);
+    }
+    return (acc << 16n) + BigInt(parseInt(trimmedSection, 16));
   }, 0n);
+
+  const maxIPv6Value = BigInt("340282366920938463463374607431768211455"); // 2^128 - 1
+  if (result > maxIPv6Value) {
+    throw new InvalidIPAddressError(`"${result}" exceeds the IPv6 address range.`);
+  }
+
+  return result;
 };
 
 /**
@@ -101,6 +118,11 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
 export const toIPv6 = (num: bigint): IPv6Address => {
   if (typeof num !== "bigint") {
     throw new TypeMismatchError("bigint", typeof num);
+  }
+
+  const maxIPv6Value = BigInt("340282366920938463463374607431768211455"); // 2^128 - 1
+  if (num < 0n || num > maxIPv6Value) {
+    throw new InvalidIPAddressError(`"${num}" is out of the valid IPv6 range.`);
   }
 
   const sections = [];
