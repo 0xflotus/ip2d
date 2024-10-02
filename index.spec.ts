@@ -75,8 +75,6 @@ test("should handle IPv4 with leading zeros", () => {
   expect(toIPv4(fromIPv4("001.002.003.004"))).toBe("1.2.3.4");
 });
 
-
-
 test("should throw error for negative numbers (except -1)", () => {
   expect(() => toIPv4(-2)).toThrow();
   expect(() => toIPv4(-100)).toThrow();
@@ -156,7 +154,3 @@ test("should throw error for incomplete IPv6 strings", () => {
   expect(() => fromIPv6("2001:4860")).toThrow();
   expect(() => fromIPv6("::1::")).toThrow();
 });
-
-  expect(toIPv6(42541956123769884636017138956568135816n)).toBe("2001:4860:4860::8888");
-});
-

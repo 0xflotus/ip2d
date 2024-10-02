@@ -41,6 +41,7 @@ export const fromIPv4 = (str: IPv4Address): number => {
   return parts.reduce((a: number, b: number) => (a << 8) | b);
 };
 
+
 /**
  * Converts a number back to an IPv4 address string.
  * @param num - A number representing the IPv4 address.
@@ -58,6 +59,7 @@ export const toIPv4 = (num: number): IPv4Address => {
 
   return [24, 16, 8, 0].map((shift: number) => (num >> shift) & 0xFF).join(".");
 };
+
 
 /**
  * Converts an IPv6 address string to a BigInt.
