@@ -16,13 +16,20 @@
     "prepare": "tsc index.ts",
     "prepublishOnly": "yarn run test",
     "pretest": "tsc index.spec.ts",
-    "test": "jest index.spec.js"
+    "test": "jest index.spec.js",
+    "lint": "eslint ."
   },
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^9.11.1",
     "@types/jest": "29.5.13",
     "@types/node": "22.7.4",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^9.11.1",
+    "globals": "^15.10.0",
     "jest": "29.7.0",
-    "typescript": "5.6.2"
+    "typescript": "5.6.2",
+    "typescript-eslint": "^8.8.0"
   }
 }
