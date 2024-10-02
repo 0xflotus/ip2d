@@ -39,7 +39,7 @@ export const fromIPv4 = (str: IPv4Address): number => {
   }
 
   return parts.reduce((a: number, b: number) => (a << 8) | b);
-}
+};
 
 /**
  * Converts a number back to an IPv4 address string.
@@ -57,7 +57,7 @@ export const toIPv4 = (num: number): IPv4Address => {
   }
 
   return [24, 16, 8, 0].map((shift: number) => (num >> shift) & 0xFF).join(".");
-}
+};
 
 /**
  * Converts an IPv6 address string to a BigInt.
@@ -108,6 +108,5 @@ export const toIPv6 = (num: bigint): IPv6Address => {
     sections.unshift(((num >> BigInt(i * 16)) & BigInt(0xFFFF)).toString(16));
   }
 
-  const ipv6 = sections.join(":").replace(/(^|:)0(:0)*(:|$)/, "::").replace(/:{3,}/, "::");
-  return ipv6;
+  return sections.join(":").replace(/(^|:)0(:0)*(:|$)/, "::").replace(/:{3,}/, "::");
 };
