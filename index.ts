@@ -49,8 +49,8 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
   }
 
   return sections.reduce((acc: bigint, section: string) => {
-    return (acc << BigInt(16)) + BigInt(parseInt(section || "0", 16));
-  }, BigInt(0));
+    return (acc << 16n) + BigInt(parseInt(section || "0", 16));
+  }, 0n);
 };
 
 /**
@@ -62,7 +62,7 @@ export const toIPv6 = (num: bigint): IPv6Address => {
   const sections = [];
 
   for (let i = 0; i < 8; i++) {
-    sections.unshift(((num >> BigInt(i * 16)) & BigInt(0xFFFF)).toString(16));
+    sections.unshift(((num >> BigInt(i * 16)) & 0xFFFFn).toString(16));
   }
 
   // Rebuilds the address while collapsing any consecutive sections of 0 into "::"
