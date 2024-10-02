@@ -1,4 +1,4 @@
-import {toIPv4, fromIPv4, toIPv6, fromIPv6} from "./"
+import { toIPv4, fromIPv4, toIPv6, fromIPv6 } from "./";
 
 /* 
   IPv4 Testing 
@@ -52,6 +52,40 @@ test("arithmetic example", () => {
 });
 
 /*
+  IPv4 Additional Testing 
+*/
+
+test("should be 0.0.0.0", () => {
+  expect(toIPv4(0)).toBe("0.0.0.0");
+});
+
+test("should be 0", () => {
+  expect(fromIPv4("0.0.0.0")).toBe(0);
+});
+
+test("should throw error for invalid IPv4 format", () => {
+  expect(() => fromIPv4("999.999.999.999")).toThrow();
+  expect(() => fromIPv4("abcd")).toThrow();
+  expect(() => fromIPv4("192.168.0.256")).toThrow();
+  expect(() => fromIPv4("192.168.-1.1")).toThrow();
+});
+
+test("should handle IPv4 with leading zeros", () => {
+  expect(fromIPv4("192.168.001.001")).toBe(fromIPv4("192.168.1.1"));
+  expect(toIPv4(fromIPv4("001.002.003.004"))).toBe("1.2.3.4");
+});
+
+test("should throw error for negative numbers (except -1)", () => {
+  expect(() => toIPv4(-2)).toThrow();
+  expect(() => toIPv4(-100)).toThrow();
+});
+
+test("should throw error for incomplete IPv4 strings", () => {
+  expect(() => fromIPv4("192.168")).toThrow();
+  expect(() => fromIPv4("255.255")).toThrow();
+});
+
+/*
   IPv6 Testing
 */
 
@@ -77,4 +111,45 @@ test("should be 21da:d4::2f4c:2bc:ff:fe18:4c5a", () => {
 
 test("should be 2001:4860:4860::8888", () => {
   expect(toIPv6(42541956123769884636017138956568135816n)).toBe("2001:4860:4860::8888");
+});
+
+/*
+  IPv6 Additional Testing
+*/
+
+test("should be ::", () => {
+  expect(toIPv6(BigInt(0))).toBe("::");
+});
+
+test("should be 0", () => {
+  expect(fromIPv6("::")).toBe(BigInt(0));
+});
+
+test("should throw error for invalid IPv6 format", () => {
+  expect(() => fromIPv6("2001:4860::z888")).toThrow(); // invalid character
+  expect(() => fromIPv6("abcd")).toThrow(); // too short
+  expect(() => fromIPv6("1200::AB00::BA0")).toThrow(); // double "::"
+  expect(() => fromIPv6("::1::")).toThrow(); // misplaced "::"
+});
+
+test("should handle IPv6 with leading zeros", () => {
+  expect(fromIPv6("0001:0000:0000:0000:0000:0000:0000:0001")).toBe(BigInt(1));
+  expect(toIPv6(BigInt(1))).toBe("::1");
+  expect(toIPv6(BigInt(42541956123769884636017138956568135816n))).toBe("2001:4860:4860::8888");
+});
+
+test("should throw error for numbers beyond IPv6 range", () => {
+  const maxIPv6Value = BigInt("340282366920938463463374607431768211455"); // 2^128 - 1
+  expect(() => toIPv6(maxIPv6Value + BigInt(1))).toThrow();
+  expect(() => fromIPv6("340282366920938463463374607431768211456")).toThrow(); // beyond 128-bit
+});
+
+test("should throw error for negative BigInt", () => {
+  expect(() => toIPv6(BigInt(-1))).toThrow();
+  expect(() => fromIPv6("-1")).toThrow();
+});
+
+test("should throw error for incomplete IPv6 strings", () => {
+  expect(() => fromIPv6("2001:4860")).toThrow();
+  expect(() => fromIPv6("::1::")).toThrow();
 });
