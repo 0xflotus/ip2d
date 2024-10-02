@@ -17,7 +17,7 @@
     "prepublishOnly": "yarn run test",
     "pretest": "tsc",
     "test": "jest dist/index.spec.js",
-    "lint": "eslint ."
+    "lint": "eslint index.ts"
   },
   "license": "MIT",
   "devDependencies": {
