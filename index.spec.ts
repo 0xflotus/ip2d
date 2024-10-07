@@ -115,7 +115,7 @@ test("should be 2001:4860:4860::8888", () => {
 
 test("should be ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff", () => {
   expect(toIPv6(340282366920938463463374607431768211455n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
-  expect(toIPv6(2**128-1)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+  expect(toIPv6(2n**128n-1n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
 });
 
 test("should be 340282366920938463463374607431768211455", () => {
