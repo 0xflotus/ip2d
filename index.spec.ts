@@ -113,6 +113,31 @@ test("should be 2001:4860:4860::8888", () => {
   expect(toIPv6(42541956123769884636017138956568135816n)).toBe("2001:4860:4860::8888");
 });
 
+test("should be ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff", () => {
+  expect(toIPv6(340282366920938463463374607431768211455n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+  expect(toIPv6(2**128-1)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+});
+
+test("should be 340282366920938463463374607431768211455", () => {
+  expect(fromIPv6("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff")).toBe(340282366920938463463374607431768211455n);
+});
+
+test("should be ffff:ffff::ffff:ffff:ffff:ffff", () => {
+  expect(toIPv6(340282366841710300967557013911933812735n)).toBe("ffff:ffff::ffff:ffff:ffff:ffff");
+});
+
+test("should be 340282366841710300967557013911933812735", () => {
+  expect(fromIPv6("ffff:ffff::ffff:ffff:ffff:ffff")).toBe(340282366841710300967557013911933812735n);
+});
+
+test("should be ffff:ffff::", () => {
+  expect(toIPv6(340282366841710300949110269838224261120n)).toBe("ffff:ffff::");
+});
+
+test("should be 340282366841710300949110269838224261120", () => {
+  expect(fromIPv6("ffff:ffff::")).toBe(340282366841710300949110269838224261120n);
+});
+
 /*
   IPv6 Additional Testing
 */
