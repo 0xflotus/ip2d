@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: 
+      - master
     paths:
       - '**.ts'
       - package.json
-  pull_request:
-    branches: [master]
 
 jobs:
   build:
