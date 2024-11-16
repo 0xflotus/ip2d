@@ -13,11 +13,12 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepare": "husky",
+    "prepare": "tsc",
     "pretest": "tsc",
     "test": "jest dist/index.spec.js",
     "lint": "eslint index.ts",
     "prepare:husky": "husky install"
+
   },
   "license": "MIT",
   "devDependencies": {
