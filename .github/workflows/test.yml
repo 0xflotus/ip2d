@@ -15,10 +15,11 @@ on:
 jobs:
   build:
     name: Testing
-    runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm]
         node-version: [18, 20, 22]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js ${{ matrix.node-version }}
