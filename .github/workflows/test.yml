@@ -24,7 +24,7 @@ jobs:
           node-version: 22
       - run: npm install
       - name: Run Linting
-        run: npm run lint
+        run: DEBUG=eslint:eslint npm run lint
   build:
     name: Testing
     needs: lint
