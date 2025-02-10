@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint .",
+    "lint": "eslint *.ts",
     "prepare": "tsc",
     "pretest": "tsc",
     "test": "jest dist/*.spec.js"
