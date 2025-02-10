@@ -1,9 +1,11 @@
+import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 
 export default [
-  ...tseslint.configs.recommended,
   {
     files: ["**/*.ts"], 
     ignores: ["dist/"],
   },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
 ];
