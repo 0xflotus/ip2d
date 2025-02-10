@@ -13,10 +13,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint ."
+    "lint": "eslint .",
     "prepare": "tsc",
     "pretest": "tsc",
-    "test": "jest dist/*.spec.js",
+    "test": "jest dist/*.spec.js"
   },
   "license": "MIT",
   "devDependencies": {
