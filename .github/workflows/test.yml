@@ -13,8 +13,21 @@ on:
       - package.json
 
 jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - name: Run Linting
+        run: DEBUG=eslint:eslint npm run lint
   build:
     name: Testing
+    needs: lint
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu-24.04-arm]
@@ -27,7 +40,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - name: Run Linting
-        run: npm run lint
       - run: npm run build
       - run: npm test
