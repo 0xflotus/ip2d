@@ -10,6 +10,7 @@ on:
     paths:
       - '**.ts'
       - '.github/workflows/*.yml'
+      - eslint.config.mjs
       - package.json
 
 jobs:
