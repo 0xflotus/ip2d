@@ -6,14 +6,11 @@
 
 We welcome contributions from all levels of experience, including immediate beginners. Here is a step-by-step guide on how to clone the repository and create a pull request:
 
-
 ## How to make a pull request?
 
 **1. Fork the repository.**
 
-
 In order to contribute to the repository, first you need to fork the repository by `Forking` the repository.
-
 
 ```
 Fork the repository!
@@ -81,8 +78,8 @@ Once the maintainer is happy with your changes, they will merge your pull reques
 
 **Additional Tips**
 
-* Be sure to read the README before making any changes.
-* If you have any questions, please feel free to open an issue or ask for help on the discussion board.
-* Don't be afraid to make mistakes! Everyone makes mistakes, and we are here to help you learn from them.
+- Be sure to read the README before making any changes.
+- If you have any questions, please feel free to open an issue or ask for help on the discussion board.
+- Don't be afraid to make mistakes! Everyone makes mistakes, and we are here to help you learn from them.
 
 We appreciate your contributions to ip2d 🎇

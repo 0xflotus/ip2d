@@ -5,11 +5,11 @@ on:
     branches:
       - master
   pull_request:
-    branches: 
+    branches:
       - master
     paths:
-      - '**.ts'
-      - '.github/workflows/*.yml'
+      - "**.ts"
+      - ".github/workflows/*.yml"
       - eslint.config.mjs
       - package.json
 
@@ -24,6 +24,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install
+      - name: Check format
+        run: npx dprint check
       - name: Run Linting
         run: DEBUG=eslint:eslint npm run lint
   build:

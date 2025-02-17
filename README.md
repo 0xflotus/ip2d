@@ -7,10 +7,10 @@
 
 ## Features
 
-* Convert IPv4 to Decimal
-* Convert Decimal to IPv4
-* Convert IPv6 to BigInt
-* Convert BigInt to IPv6
+- Convert IPv4 to Decimal
+- Convert Decimal to IPv4
+- Convert IPv6 to BigInt
+- Convert BigInt to IPv6
 
 ## Installation
 
@@ -51,7 +51,7 @@ import { fromIPv6 } from "ip2d";
 
 const bigIntValue = fromIPv6("2001:0db8:85a3:0000:0000:8a2e:0370:7334");
 
-console.log(bigIntValue);  // Output: A BigInt representation of the IPv6 address
+console.log(bigIntValue); // Output: A BigInt representation of the IPv6 address
 ```
 
 ### BigInt to IPv6 Conversion
@@ -63,7 +63,7 @@ import { toIPv6 } from "ip2d";
 
 const ipv6Address = toIPv6(BigInt("42540766411282592856906245548098208148"));
 
-console.log(ipv6Address);  // Output: "2001:db8:85a3::8a2e:370:7334"
+console.log(ipv6Address); // Output: "2001:db8:85a3::8a2e:370:7334"
 ```
 
 ## Security Considerations
@@ -79,11 +79,3 @@ You can view the full license [here](./LICENSE).
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/0xflotus/ip2d.svg)](https://starchart.cc/0xflotus/ip2d)
-
-
-
-
-
-
-
-
