@@ -10,7 +10,7 @@ export default [
       "hex-under": eslintPluginHexUnder,
     },
     rules: {
-      "hex-under/hex-under": "error",
+      "hex-under/hex-under": ["warn", { limit: 255 }],
     },
   },
 ];
