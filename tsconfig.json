@@ -6,13 +6,13 @@
     ],
     "module": "commonjs",
     "target": "esnext",
-    "strict": true,                        // Enable strict type-checking
-    "esModuleInterop": true,               // Ensure compatibility between CommonJS and ESModules
-    "skipLibCheck": true,                  // Speed up compilation by skipping type checking in .d.ts files
+    "strict": true, // Enable strict type-checking
+    "esModuleInterop": true, // Ensure compatibility between CommonJS and ESModules
+    "skipLibCheck": true, // Speed up compilation by skipping type checking in .d.ts files
     "forceConsistentCasingInFileNames": true, // Enforce consistent casing for imports
-    "outDir": "./dist",                    // Specify the output directory for compiled files
-    "baseUrl": "./",                       // Base directory to resolve non-relative module names
-    "paths": {                             // Path mapping for module resolution
+    "outDir": "./dist", // Specify the output directory for compiled files
+    "baseUrl": "./", // Base directory to resolve non-relative module names
+    "paths": { // Path mapping for module resolution
       "*": ["node_modules/*"]
     }
   },
@@ -21,7 +21,7 @@
     "index.spec.ts"
   ],
   "exclude": [
-    "node_modules",                        // Ensure node_modules is excluded
-    "dist"                                 // Exclude compiled files directory
+    "node_modules", // Ensure node_modules is excluded
+    "dist" // Exclude compiled files directory
   ]
 }

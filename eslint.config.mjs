@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 
 export default [
   {
-    files: ["**/*.ts"], 
+    files: ["**/*.ts"],
     ignores: ["**/*.js"],
   },
   pluginJs.configs.recommended,

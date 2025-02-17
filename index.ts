@@ -30,7 +30,7 @@ export const fromIPv4 = (str: IPv4Address): number => {
   }
 
   // Normalize by removing leading zeros from each octet
-  const normalized = str.split('.').map(octet => String(Number(octet))).join('.');
+  const normalized = str.split(".").map(octet => String(Number(octet))).join(".");
 
   if (!isIPv4(normalized)) {
     throw new InvalidIPAddressError(`"${str}" is not a valid IPv4 address.`);
@@ -43,7 +43,7 @@ export const fromIPv4 = (str: IPv4Address): number => {
   }
 
   return parts.reduce((a: number, b: number) => (a << 8) | b);
-}
+};
 
 /**
  * Converts a number back to an IPv4 address string.
@@ -63,7 +63,7 @@ export const toIPv4 = (num: number): IPv4Address => {
     return "255.255.255.255";
   }
   return [24, 16, 8, 0].map((shift: number) => (num >> shift) & 0xFF).join(".");
-}
+};
 
 /**
  * Converts an IPv6 address string to a BigInt.
@@ -94,7 +94,7 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
   }
 
   const result = sections.reduce((acc: bigint, section: string) => {
-    const trimmedSection = section.replace(/^0+/, '') || '0';
+    const trimmedSection = section.replace(/^0+/, "") || "0";
     if (!/^[0-9a-fA-F]{1,4}$/.test(trimmedSection)) {
       throw new InvalidIPAddressError(`"${section}" is not a valid IPv6 section.`);
     }

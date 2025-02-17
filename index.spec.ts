@@ -1,7 +1,7 @@
-import { toIPv4, fromIPv4, toIPv6, fromIPv6 } from "./";
+import { fromIPv4, fromIPv6, toIPv4, toIPv6 } from "./";
 
-/* 
-  IPv4 Testing 
+/*
+  IPv4 Testing
 */
 
 test("Should be the same", () => {
@@ -52,7 +52,7 @@ test("arithmetic example", () => {
 });
 
 /*
-  IPv4 Additional Testing 
+  IPv4 Additional Testing
 */
 
 test("should be 0.0.0.0", () => {
@@ -115,7 +115,7 @@ test("should be 2001:4860:4860::8888", () => {
 
 test("should be ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff", () => {
   expect(toIPv6(340282366920938463463374607431768211455n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
-  expect(toIPv6(2n**128n-1n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+  expect(toIPv6(2n ** 128n - 1n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
 });
 
 test("should be 340282366920938463463374607431768211455", () => {
