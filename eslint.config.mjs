@@ -11,6 +11,7 @@ export default [
     },
     rules: {
       "hex-under/hex-under": ["warn", { limit: 255 }],
+      "hex-under/hex-under-bigint": "warn",
     },
   },
 ];
