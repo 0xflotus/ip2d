@@ -24,7 +24,7 @@
   "devDependencies": {
     "@eslint/js": "9.31.0",
     "@types/jest": "30.0.0",
-    "@types/node": "24.0.13",
+    "@types/node": "24.1.0",
     "@typescript-eslint/eslint-plugin": "8.38.0",
     "@typescript-eslint/parser": "8.37.0",
     "dprint": "0.50.0",
