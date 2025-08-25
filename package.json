@@ -28,7 +28,7 @@
     "@typescript-eslint/eslint-plugin": "8.40.0",
     "@typescript-eslint/parser": "8.40.0",
     "dprint": "0.50.1",
-    "eslint": "9.33.0",
+    "eslint": "9.34.0",
     "eslint-plugin-hex-under": "0.3.2",
     "globals": "16.3.0",
     "jest": "30.0.5",
