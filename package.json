@@ -27,7 +27,7 @@
     "@types/node": "24.4.0",
     "@typescript-eslint/eslint-plugin": "8.44.0",
     "@typescript-eslint/parser": "8.42.0",
-    "@types/node": "24.5.2",
+    "@types/node": "24.7.2",
     "@typescript-eslint/eslint-plugin": "8.44.1",
     "@typescript-eslint/parser": "8.45.0",
     "dprint": "0.50.2",
