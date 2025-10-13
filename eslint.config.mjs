@@ -1,13 +1,17 @@
 import pluginJs from "@eslint/js";
+import tseslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import eslintPluginHexUnder from "eslint-plugin-hex-under";
-import tseslint from "typescript-eslint";
 
 export default [
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
   {
     plugins: {
       "hex-under": eslintPluginHexUnder,
+      "@typescript-eslint": tseslint,
+    },
+    languageOptions: {
+      parser: tsParser,
     },
     rules: {
       "hex-under/hex-under": ["warn", { limit: 255 }],
