@@ -1,7 +1,7 @@
 import pluginJs from "@eslint/js";
-import eslintPluginHexUnder from "eslint-plugin-hex-under";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
+import eslintPluginHexUnder from "eslint-plugin-hex-under";
 
 export default [
   pluginJs.configs.recommended,
