@@ -27,7 +27,7 @@
     "@types/node": "25.0.3",
     "@typescript-eslint/eslint-plugin": "8.50.0",
     "@typescript-eslint/parser": "8.50.1",
-    "dprint": "0.50.2",
+    "dprint": "0.51.1",
     "eslint": "9.39.2",
     "eslint-plugin-de-morgan": "2.0.0",
     "eslint-plugin-hex-under": "0.3.2",
