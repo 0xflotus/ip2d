@@ -1,4 +1,5 @@
 import { fromIPv4, fromIPv6, toIPv4, toIPv6 } from "./";
+import { expect, test } from "vitest";
 
 /*
   IPv4 Testing

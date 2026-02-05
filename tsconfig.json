@@ -17,10 +17,10 @@
     }
   },
   "files": [
-    "index.ts",
-    "index.spec.ts"
+    "index.ts"
   ],
   "exclude": [
+    "index.spec.ts",
     "node_modules", // Ensure node_modules is excluded
     "dist" // Exclude compiled files directory
   ]
