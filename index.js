@@ -1,17 +1,14 @@
 import { isIPv4, isIPv6 } from "net";
 
-type IPv6Address = string;
-type IPv4Address = string;
-
 class InvalidIPAddressError extends Error {
-  constructor(message: string) {
+  constructor(message) {
     super(message);
     this.name = "InvalidIPAddressError";
   }
 }
 
 class TypeMismatchError extends Error {
-  constructor(expectedType: string, receivedType: string) {
+  constructor(expectedType, receivedType) {
     super(`Expected type '${expectedType}', but received type '${receivedType}'.`);
     this.name = "TypeMismatchError";
   }
@@ -24,7 +21,7 @@ class TypeMismatchError extends Error {
  * @throws InvalidIPAddressError if the input is not a valid IPv4 address.
  * @throws TypeMismatchError if the input is not a string.
  */
-export const fromIPv4 = (str: IPv4Address): number => {
+export const fromIPv4 = (str) => {
   if (typeof str !== "string") {
     throw new TypeMismatchError("string", typeof str);
   }
@@ -42,7 +39,7 @@ export const fromIPv4 = (str: IPv4Address): number => {
     throw new InvalidIPAddressError(`"${str}" must consist of 4 octets, each between 0 and 255.`);
   }
 
-  return parts.reduce((a: number, b: number) => (a << 8) | b);
+  return parts.reduce((a, b) => (a << 8) | b);
 };
 
 /**
@@ -52,7 +49,7 @@ export const fromIPv4 = (str: IPv4Address): number => {
  * @throws TypeMismatchError if the input is not a number.
  * @throws InvalidIPAddressError if the input number is out of range.
  */
-export const toIPv4 = (num: number): IPv4Address => {
+export const toIPv4 = (num) => {
   if (typeof num !== "number") {
     throw new TypeMismatchError("number", typeof num);
   }
@@ -62,7 +59,7 @@ export const toIPv4 = (num: number): IPv4Address => {
   if (num === -1) {
     return "255.255.255.255";
   }
-  return [24, 16, 8, 0].map((shift: number) => (num >> shift) & 0xFF).join(".");
+  return [24, 16, 8, 0].map((shift) => (num >> shift) & 0xFF).join(".");
 };
 
 /**
@@ -72,7 +69,7 @@ export const toIPv4 = (num: number): IPv4Address => {
  * @throws InvalidIPAddressError if the input is not a valid IPv6 address.
  * @throws TypeMismatchError if the input is not a string.
  */
-export const fromIPv6 = (str: IPv6Address): bigint => {
+export const fromIPv6 = (str) => {
   if (typeof str !== "string") {
     throw new TypeMismatchError("string", typeof str);
   }
@@ -93,7 +90,7 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
     throw new InvalidIPAddressError(`"${str}" does not represent a valid IPv6 address.`);
   }
 
-  const result = sections.reduce((acc: bigint, section: string) => {
+  const result = sections.reduce((acc, section) => {
     const trimmedSection = section.replace(/^0+/, "") || "0";
     if (!/^[0-9a-fA-F]{1,4}$/.test(trimmedSection)) {
       throw new InvalidIPAddressError(`"${section}" is not a valid IPv6 section.`);
@@ -115,7 +112,7 @@ export const fromIPv6 = (str: IPv6Address): bigint => {
  * @returns The IPv6 address as a string.
  * @throws TypeMismatchError if the input is not a BigInt.
  */
-export const toIPv6 = (num: bigint): IPv6Address => {
+export const toIPv6 = (num) => {
   if (typeof num !== "bigint") {
     throw new TypeMismatchError("bigint", typeof num);
   }
