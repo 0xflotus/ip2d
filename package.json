@@ -24,7 +24,6 @@
     "dprint": "0.51.1",
     "eslint": "10.0.0",
     "eslint-plugin-de-morgan": "2.0.0",
-    "eslint-plugin-hex-under": "0.3.2",
     "vitest": "4.0.18"
   }
 }
