@@ -15,19 +15,26 @@ on:
 
 jobs:
   lint:
-    name: Linting
-    runs-on: ubuntu-slim
+    name: Lint (Oxlint)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: ${{ matrix.node-version }}
       - run: npm install
-      - name: Check format
-        run: npx dprint check
-      - name: Run Linting
-        run: DEBUG=eslint:eslint npm run lint
+      - uses: oxc-project/oxlint-action@v2.0.1
+        with:
+          deny: |
+            correctness
+            no-eval
+          warn: |
+            suspicious
+            perf
   build:
     name: Testing
     needs: lint
