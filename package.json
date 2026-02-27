@@ -13,7 +13,11 @@
   },
   "scripts": {
     "format": "dprint fmt",
+<<<<<<< Updated upstream
     "lint": "eslint *.{js,mjs}",
+=======
+    "lint": "oxlint *.{js,mjs} --threads=1",
+>>>>>>> Stashed changes
     "prelint": "npm run format",
     "test": "vitest run"
   },
