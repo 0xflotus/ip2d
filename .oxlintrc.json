@@ -79,8 +79,5 @@
     ],
     "hex-under/hex-under-bigint": "warn"
   },
-  "jsPlugins": [
-    "eslint-plugin-de-morgan",
-    "eslint-plugin-hex-under"
-  ]
+  "jsPlugins": ["eslint-plugin-de-morgan", "eslint-plugin-hex-under"]
 }

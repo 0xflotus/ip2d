@@ -27,7 +27,10 @@ export const fromIPv4 = (str) => {
   }
 
   // Normalize by removing leading zeros from each octet
-  const normalized = str.split(".").map(octet => String(Number(octet))).join(".");
+  const normalized = str
+    .split(".")
+    .map((octet) => String(Number(octet)))
+    .join(".");
 
   if (!isIPv4(normalized)) {
     throw new InvalidIPAddressError(`"${str}" is not a valid IPv4 address.`);
@@ -35,7 +38,7 @@ export const fromIPv4 = (str) => {
 
   const parts = normalized.split(".").map(Number);
 
-  if (parts.length !== 4 || parts.some(part => isNaN(part) || part < 0 || part > 255)) {
+  if (parts.length !== 4 || parts.some((part) => isNaN(part) || part < 0 || part > 255)) {
     throw new InvalidIPAddressError(`"${str}" must consist of 4 octets, each between 0 and 255.`);
   }
 
@@ -53,13 +56,15 @@ export const toIPv4 = (num) => {
   if (typeof num !== "number") {
     throw new TypeMismatchError("number", typeof num);
   }
-  if (num < -1 || num > 0xFFFFFFFF) {
-    throw new InvalidIPAddressError(`"${num}" is not a valid IPv4 number. It must be between 0 and 4294967295.`);
+  if (num < -1 || num > 0xffffffff) {
+    throw new InvalidIPAddressError(
+      `"${num}" is not a valid IPv4 number. It must be between 0 and 4294967295.`,
+    );
   }
   if (num === -1) {
     return "255.255.255.255";
   }
-  return [24, 16, 8, 0].map((shift) => (num >> shift) & 0xFF).join(".");
+  return [24, 16, 8, 0].map((shift) => (num >> shift) & 0xff).join(".");
 };
 
 /**
@@ -124,9 +129,12 @@ export const toIPv6 = (num) => {
 
   const sections = [];
   for (let i = 0; i < 8; i++) {
-    sections.unshift(((num >> BigInt(i * 16)) & 0xFFFFn).toString(16));
+    sections.unshift(((num >> BigInt(i * 16)) & 0xffffn).toString(16));
   }
 
-  const ipv6 = sections.join(":").replace(/(^|:)0(:0)*(:|$)/, "::").replace(/:{3,}/, "::");
+  const ipv6 = sections
+    .join(":")
+    .replace(/(^|:)0(:0)*(:|$)/, "::")
+    .replace(/:{3,}/, "::");
   return ipv6;
 };
