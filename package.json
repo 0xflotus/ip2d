@@ -1,29 +1,29 @@
 {
   "name": "ip2d",
   "version": "2.2.0",
-  "main": "index.js",
+  "license": "MIT",
   "author": "0xflotus",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/0xflotus/ip2d.git"
   },
-  "engines": {
-    "node": ">= 22.14.0",
-    "npm": ">= 10.9.2"
-  },
+  "main": "index.js",
   "scripts": {
-    "format": "dprint fmt",
+    "format": "oxfmt",
     "lint": "oxlint *.{js,mjs}",
     "prelint": "npm run format",
     "test": "vitest run"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "25.3.2",
-    "dprint": "0.52.0",
     "eslint-plugin-de-morgan": "2.0.0",
     "eslint-plugin-hex-under": "0.4.0",
+    "oxfmt": "0.35.0",
     "oxlint": "1.50.0",
     "vitest": "4.0.18"
+  },
+  "engines": {
+    "node": ">= 22.14.0",
+    "npm": ">= 10.9.2"
   }
 }

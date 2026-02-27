@@ -10,7 +10,6 @@ on:
     paths:
       - "**.js"
       - ".github/workflows/*.yml"
-      - eslint.config.mjs
       - package.json
 
 jobs:
@@ -27,6 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
+      - run: npm run format -- --check
       - uses: oxc-project/oxlint-action@v2.0.1
         with:
           deny: |
