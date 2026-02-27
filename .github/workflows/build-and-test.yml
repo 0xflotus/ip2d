@@ -17,8 +17,16 @@ jobs:
   lint:
     name: Lint (Oxlint)
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
       - uses: oxc-project/oxlint-action@v2.0.1
         with:
           deny: |
