@@ -18,20 +18,18 @@ concurrency:
 
 jobs:
   lint:
-    name: Lint (Oxlint)
+    name: Lint 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22, 24]
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js 
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24
           cache: "npm"
-      - run: npm ci
-      - run: npm run format -- --check
+      - run: |
+          npm ci
+          npm run format -- --check
       - uses: oxc-project/oxlint-action@v3.0.0
         with:
           deny: |
@@ -55,5 +53,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm ci
-      - run: npm run test
+      - run: |
+          npm ci
+          npm run test
