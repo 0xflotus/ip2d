@@ -29,6 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: "npm"
       - run: npm install
       - run: npm run format -- --check
       - uses: oxc-project/oxlint-action@v3.0.0
@@ -53,5 +54,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: "npm"
       - run: npm install
       - run: npm test
