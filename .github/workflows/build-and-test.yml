@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
+      - run: npm ci
       - run: npm run format -- --check
       - uses: oxc-project/oxlint-action@v3.0.0
         with:
@@ -55,5 +55,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
-      - run: npm test
+      - run: npm ci
+      - run: npm run test
