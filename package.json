@@ -15,7 +15,7 @@
     "test": "vitest run --coverage --logHeapUsage --reporter verbose"
   },
   "devDependencies": {
-    "@types/node": "25.3.3",
+    "@types/node": "25.3.5",
     "@vitest/coverage-v8": "4.0.18",
     "eslint-plugin-de-morgan": "2.1.1",
     "eslint-plugin-hex-under": "0.4.1",
