@@ -35,7 +35,6 @@ test("should throw error", () => {
 test("should be the same", () => {
   expect(toIPv4(4294967295)).toBe("255.255.255.255");
   expect(toIPv4(0xffffffff)).toBe("255.255.255.255");
-  expect(toIPv4(-1)).toBe("255.255.255.255");
 });
 
 test("should be 9.9.9.8", () => {
@@ -71,11 +70,6 @@ test("should throw error for invalid IPv4 format", () => {
   expect(() => fromIPv4("192.168.-1.1")).toThrow();
 });
 
-test("should handle IPv4 with leading zeros", () => {
-  expect(fromIPv4("192.168.001.001")).toBe(fromIPv4("192.168.1.1"));
-  expect(toIPv4(fromIPv4("001.002.003.004"))).toBe("1.2.3.4");
-});
-
 test("should throw error for negative numbers (except -1)", () => {
   expect(() => toIPv4(-2)).toThrow();
   expect(() => toIPv4(-100)).toThrow();
@@ -84,6 +78,22 @@ test("should throw error for negative numbers (except -1)", () => {
 test("should throw error for incomplete IPv4 strings", () => {
   expect(() => fromIPv4("192.168")).toThrow();
   expect(() => fromIPv4("255.255")).toThrow();
+});
+
+
+test("should throw error for non-string input", () => {
+  expect(() => fromIPv4(123)).toThrow();
+  expect(() => fromIPv4({})).toThrow();
+  expect(() => fromIPv4([])).toThrow();
+  expect(() => fromIPv4(null)).toThrow();
+  expect(() => fromIPv4(undefined)).toThrow();
+  expect(() => toIPv4(true)).toThrow();
+});
+
+test("should throw error for malformed IPv4 strings", () => {
+  expect(() => fromIPv4("192.168.0.252.11")).toThrow();
+  expect(() => fromIPv4("192.168.abc.1")).toThrow();
+  expect(() => fromIPv4("192.168.0.-1")).toThrow();
 });
 
 /*
@@ -182,4 +192,25 @@ test("should throw error for negative BigInt", () => {
 test("should throw error for incomplete IPv6 strings", () => {
   expect(() => fromIPv6("2001:4860")).toThrow();
   expect(() => fromIPv6("::1::")).toThrow();
+});
+
+test("should throw error for non-string input", () => {
+  expect(() => fromIPv6(123)).toThrow();
+  expect(() => fromIPv6({})).toThrow();
+  expect(() => fromIPv6([])).toThrow();
+  expect(() => fromIPv6(null)).toThrow();
+  expect(() => fromIPv6(undefined)).toThrow();
+  expect(() => toIPv6(true)).toThrow();
+});
+
+test("should throw error for malformed IPv6 strings", () => {
+  expect(() => fromIPv6("2001:4860:4860:::8888")).toThrow();
+  expect(() => fromIPv6("2001:4860:4860::8888::")).toThrow();
+  expect(() => fromIPv6("2001:4860:4860::8888:")).toThrow();
+  expect(() => fromIPv6(":2001:4860:4860::8888")).toThrow();
+  expect(() => fromIPv6("2001:4860:4860::8888:zzzz")).toThrow();
+  expect(() => fromIPv6("2001:4860:4860::8888:12345")).toThrow();
+  expect(() => fromIPv6("2001:4860:4860:0000:8888:8888:3333")).toThrow();
+  expect(() => fromIPv6("2001:4860:4860:0000:8888:8888:3333:4444:5555")).toThrow();
+  expect(() => fromIPv6("2001:4860g:4860:0000:8888:8888:3333::")).toThrow();
 });

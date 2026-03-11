@@ -26,18 +26,11 @@ export const fromIPv4 = (str) => {
     throw new TypeMismatchError("string", typeof str);
   }
 
-  // Normalize by removing leading zeros from each octet
-  const normalized = str
-    .split(".")
-    .map((octet) => String(Number(octet)))
-    .join(".");
-
-  if (!isIPv4(normalized)) {
+  if (!isIPv4(str)) {
     throw new InvalidIPAddressError(`"${str}" is not a valid IPv4 address.`);
   }
 
-  const parts = normalized.split(".").map(Number);
-
+  const parts = str.split(".").map(Number);
   if (parts.length !== 4 || parts.some((part) => isNaN(part) || part < 0 || part > 255)) {
     throw new InvalidIPAddressError(`"${str}" must consist of 4 octets, each between 0 and 255.`);
   }
@@ -56,13 +49,10 @@ export const toIPv4 = (num) => {
   if (typeof num !== "number") {
     throw new TypeMismatchError("number", typeof num);
   }
-  if (num < -1 || num > 0xffffffff) {
+  if (num < 0 || num > 0xffffffff) {
     throw new InvalidIPAddressError(
       `"${num}" is not a valid IPv4 number. It must be between 0 and 4294967295.`,
     );
-  }
-  if (num === -1) {
-    return "255.255.255.255";
   }
   return [24, 16, 8, 0].map((shift) => (num >> shift) & 0xff).join(".");
 };
