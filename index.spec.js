@@ -80,7 +80,6 @@ test("should throw error for incomplete IPv4 strings", () => {
   expect(() => fromIPv4("255.255")).toThrow();
 });
 
-
 test("should throw error for non-string input", () => {
   expect(() => fromIPv4(123)).toThrow();
   expect(() => fromIPv4({})).toThrow();
