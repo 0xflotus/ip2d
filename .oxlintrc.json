@@ -74,10 +74,10 @@
     "hex-under/hex-under": [
       "warn",
       {
-        "limit": 255
+        "limit": 255,
+        "skipBigInt": false
       }
-    ],
-    "hex-under/hex-under-bigint": "warn"
+    ]
   },
   "jsPlugins": ["eslint-plugin-de-morgan", "eslint-plugin-hex-under"]
 }
