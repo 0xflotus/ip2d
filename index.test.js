@@ -96,29 +96,21 @@ describe("ipv6", () => {
     expect(fromIPv6("21da:d4::2f4c:2bc:ff:fe18:4c5a")).toBe(
       44996461372433492606259129078766914650n,
     );
-    expect(fromIPv6("2001:4860:4860::8888")).toBe(
-      42541956123769884636017138956568135816n,
-    );
+    expect(fromIPv6("2001:4860:4860::8888")).toBe(42541956123769884636017138956568135816n);
   });
 
   it("should convert bigint to ipv6", () => {
     expect.assertions(3);
 
     expect(toIPv6(1n)).toBe("::1");
-    expect(toIPv6(44996461372433492606259129078766914650n)).toBe(
-      "21da:d4::2f4c:2bc:ff:fe18:4c5a",
-    );
-    expect(toIPv6(42541956123769884636017138956568135816n)).toBe(
-      "2001:4860:4860::8888",
-    );
+    expect(toIPv6(44996461372433492606259129078766914650n)).toBe("21da:d4::2f4c:2bc:ff:fe18:4c5a");
+    expect(toIPv6(42541956123769884636017138956568135816n)).toBe("2001:4860:4860::8888");
   });
 
   it("should handle max values", () => {
     expect.assertions(2);
 
-    expect(toIPv6(2n ** 128n - 1n)).toBe(
-      "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
-    );
+    expect(toIPv6(2n ** 128n - 1n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
 
     expect(fromIPv6("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff")).toBe(
       340282366920938463463374607431768211455n,
@@ -128,17 +120,11 @@ describe("ipv6", () => {
   it("should handle compressed forms", () => {
     expect.assertions(3);
 
-    expect(toIPv6(340282366841710300967557013911933812735n)).toBe(
-      "ffff:ffff::ffff:ffff:ffff:ffff",
-    );
+    expect(toIPv6(340282366841710300967557013911933812735n)).toBe("ffff:ffff::ffff:ffff:ffff:ffff");
 
-    expect(toIPv6(340282366841710300949110269838224261120n)).toBe(
-      "ffff:ffff::",
-    );
+    expect(toIPv6(340282366841710300949110269838224261120n)).toBe("ffff:ffff::");
 
-    expect(fromIPv6("ffff:ffff::")).toBe(
-      340282366841710300949110269838224261120n,
-    );
+    expect(fromIPv6("ffff:ffff::")).toBe(340282366841710300949110269838224261120n);
   });
 
   it("should handle zero", () => {
@@ -172,9 +158,7 @@ describe("ipv6", () => {
       const max = BigInt("340282366920938463463374607431768211455");
 
       expect(() => toIPv6(max + 1n)).toThrow();
-      expect(() =>
-        fromIPv6("340282366920938463463374607431768211456"),
-      ).toThrow();
+      expect(() => fromIPv6("340282366920938463463374607431768211456")).toThrow();
     });
 
     it("negative values", () => {
