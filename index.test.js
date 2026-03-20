@@ -1,0 +1,206 @@
+import { expect, describe, it } from "vitest";
+import { fromIPv4, fromIPv6, toIPv4, toIPv6 } from "./dist";
+
+describe("ipv4", () => {
+  it("should convert back and forth", () => {
+    expect.assertions(3);
+
+    expect(fromIPv4(toIPv4(1))).toBe(1);
+    expect(toIPv4(fromIPv4("44.2.4.0"))).toBe("44.2.4.0");
+    expect(toIPv4(fromIPv4(toIPv4(fromIPv4("44.2.4.0"))))).toBe("44.2.4.0");
+  });
+
+  it("should convert number to ip", () => {
+    expect.assertions(2);
+
+    expect(toIPv4(2130706433)).toBe("127.0.0.1");
+    expect(toIPv4(151587081)).toBe("9.9.9.9");
+  });
+
+  it("should convert ip to number", () => {
+    expect.assertions(3);
+
+    expect(fromIPv4("127.0.0.1")).toBe(2130706433);
+    expect(fromIPv4("9.9.9.9")).toBe(151587081);
+    expect(fromIPv4("9.9.9.8")).toBe(151587080);
+  });
+
+  it("should support arithmetic", () => {
+    expect.assertions(3);
+
+    expect(fromIPv4("10.10.3.2") + 12).toBe(fromIPv4("10.10.3.14"));
+    expect(toIPv4(fromIPv4("3.5.22.9") + 4)).toBe("3.5.22.13");
+    expect(toIPv4(fromIPv4("3.5.22.255") + 22)).toBe("3.5.23.21");
+  });
+
+  it("should handle boundaries", () => {
+    expect.assertions(3);
+
+    expect(toIPv4(0)).toBe("0.0.0.0");
+    expect(fromIPv4("0.0.0.0")).toBe(0);
+    expect(toIPv4(4294967295)).toBe("255.255.255.255");
+  });
+
+  it("should handle hex values", () => {
+    expect.assertions(3);
+
+    expect(toIPv4(0xffffffff)).toBe("255.255.255.255"); // ignore-hex-under
+    expect(toIPv4(0x09090908)).toBe("9.9.9.8");
+    expect(toIPv4(0x09090909)).toBe("9.9.9.9");
+  });
+
+  describe("errors", () => {
+    it("invalid format", () => {
+      expect.assertions(4);
+
+      expect(() => fromIPv4("999.999.999.999")).toThrow();
+      expect(() => fromIPv4("abcd")).toThrow();
+      expect(() => fromIPv4("192.168.0.256")).toThrow();
+      expect(() => fromIPv4("192.168.-1.1")).toThrow();
+    });
+
+    it("invalid structure", () => {
+      expect.assertions(4);
+
+      expect(() => fromIPv4("192.168")).toThrow();
+      expect(() => fromIPv4("255.255")).toThrow();
+      expect(() => fromIPv4("192.168.0.252.11")).toThrow();
+      expect(() => fromIPv4("192.168.abc.1")).toThrow();
+    });
+
+    it("invalid types", () => {
+      expect.assertions(5);
+
+      expect(() => fromIPv4(123)).toThrow();
+      expect(() => fromIPv4({})).toThrow();
+      expect(() => fromIPv4([])).toThrow();
+      expect(() => fromIPv4(null)).toThrow();
+      expect(() => fromIPv4(undefined)).toThrow();
+    });
+
+    it("invalid toipv4 input", () => {
+      expect.assertions(3);
+
+      expect(() => toIPv4(true)).toThrow();
+      expect(() => toIPv4(-2)).toThrow();
+      expect(() => toIPv4(-100)).toThrow();
+    });
+  });
+});
+
+describe("ipv6", () => {
+  it("should convert from ipv6 to bigint", () => {
+    expect.assertions(3);
+
+    expect(fromIPv6("::1")).toBe(1n);
+    expect(fromIPv6("21da:d4::2f4c:2bc:ff:fe18:4c5a")).toBe(
+      44996461372433492606259129078766914650n,
+    );
+    expect(fromIPv6("2001:4860:4860::8888")).toBe(42541956123769884636017138956568135816n);
+  });
+
+  it("should convert bigint to ipv6", () => {
+    expect.assertions(3);
+
+    expect(toIPv6(1n)).toBe("::1");
+    expect(toIPv6(44996461372433492606259129078766914650n)).toBe("21da:d4::2f4c:2bc:ff:fe18:4c5a");
+    expect(toIPv6(42541956123769884636017138956568135816n)).toBe("2001:4860:4860::8888");
+  });
+
+  it("should handle max values", () => {
+    expect.assertions(2);
+
+    expect(toIPv6(2n ** 128n - 1n)).toBe("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff");
+
+    expect(fromIPv6("ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff")).toBe(
+      340282366920938463463374607431768211455n,
+    );
+  });
+
+  it("should handle compressed forms", () => {
+    expect.assertions(3);
+
+    expect(toIPv6(340282366841710300967557013911933812735n)).toBe("ffff:ffff::ffff:ffff:ffff:ffff");
+
+    expect(toIPv6(340282366841710300949110269838224261120n)).toBe("ffff:ffff::");
+
+    expect(fromIPv6("ffff:ffff::")).toBe(340282366841710300949110269838224261120n);
+  });
+
+  it("should handle zero", () => {
+    expect.assertions(2);
+
+    expect(toIPv6(0n)).toBe("::");
+    expect(fromIPv6("::")).toBe(0n);
+  });
+
+  it("should handle leading zeros", () => {
+    expect.assertions(2);
+
+    expect(fromIPv6("0000:0000:0000:0000:0000:0000:0000:0001")).toBe(1n);
+
+    expect(toIPv6(1n)).toBe("::1");
+  });
+
+  describe("errors", () => {
+    it("invalid format", () => {
+      expect.assertions(4);
+
+      expect(() => fromIPv6("2001:4860::z888")).toThrow();
+      expect(() => fromIPv6("abcd")).toThrow();
+      expect(() => fromIPv6("1200::AB00::BA0")).toThrow();
+      expect(() => fromIPv6("::1::")).toThrow();
+    });
+
+    it("out of range", () => {
+      expect.assertions(2);
+
+      const max = BigInt("340282366920938463463374607431768211455");
+
+      expect(() => toIPv6(max + 1n)).toThrow();
+      expect(() => fromIPv6("340282366920938463463374607431768211456")).toThrow();
+    });
+
+    it("negative values", () => {
+      expect.assertions(2);
+
+      expect(() => toIPv6(-1n)).toThrow();
+      expect(() => fromIPv6("-1")).toThrow();
+    });
+
+    it("invalid structure", () => {
+      expect.assertions(4);
+
+      expect(() => fromIPv6("2001:4860")).toThrow();
+      expect(() => fromIPv6("::1::")).toThrow();
+      expect(() => fromIPv6("2001:4860:4860:::8888")).toThrow();
+      expect(() => fromIPv6(":2001:4860:4860::8888")).toThrow();
+    });
+
+    it("malformed input", () => {
+      expect.assertions(5);
+
+      expect(() => fromIPv6("2001:4860:4860::8888::")).toThrow();
+      expect(() => fromIPv6("2001:4860:4860::8888:")).toThrow();
+      expect(() => fromIPv6("2001:4860:4860::8888:zzzz")).toThrow();
+      expect(() => fromIPv6("2001:4860:4860::8888:12345")).toThrow();
+      expect(() => fromIPv6("2001:4860g:4860:0000:8888:8888:3333::")).toThrow();
+    });
+
+    it("invalid types", () => {
+      expect.assertions(5);
+
+      expect(() => fromIPv6(123)).toThrow();
+      expect(() => fromIPv6({})).toThrow();
+      expect(() => fromIPv6([])).toThrow();
+      expect(() => fromIPv6(null)).toThrow();
+      expect(() => fromIPv6(undefined)).toThrow();
+    });
+
+    it("invalid toipv6 input", () => {
+      expect.assertions(1);
+
+      expect(() => toIPv6(true)).toThrow();
+    });
+  });
+});
