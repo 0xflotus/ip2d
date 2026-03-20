@@ -34,7 +34,7 @@ test("should throw error", () => {
 
 test("should be the same", () => {
   expect(toIPv4(4294967295)).toBe("255.255.255.255");
-  expect(toIPv4(0xffffffff)).toBe("255.255.255.255");
+  expect(toIPv4(0xffffffff)).toBe("255.255.255.255"); // ignore-hex-under
 });
 
 test("should be 9.9.9.8", () => {
