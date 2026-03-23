@@ -26,7 +26,7 @@
     "@vitest/eslint-plugin": "1.6.13",
     "eslint": "10.1.0",
     "eslint-plugin-de-morgan": "2.1.1",
-    "eslint-plugin-hex-under": "1.2.3",
+    "eslint-plugin-hex-under": "1.5.1",
     "oxfmt": "0.41.0",
     "oxlint": "1.56.0",
     "terser": "5.46.1",
