@@ -27,8 +27,8 @@
     "eslint": "10.1.0",
     "eslint-plugin-de-morgan": "2.1.1",
     "eslint-plugin-hex-under": "1.7.8",
-    "oxfmt": "0.41.0",
-    "oxlint": "1.56.0",
+    "oxfmt": "0.42.0",
+    "oxlint": "1.57.0",
     "terser": "5.46.1",
     "vitest": "4.1.0"
   },
