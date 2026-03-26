@@ -39,7 +39,7 @@ jobs:
             suspicious
             perf
       - name: Lint with ESLint
-        run: npm eslint
+        run: npm run eslint
   build:
     name: Testing
     needs: lint
