@@ -30,14 +30,8 @@ jobs:
       - run: |
           npm ci
           npm run format -- --check
-      - uses: oxc-project/oxlint-action@v3.0.0
-        with:
-          deny: |
-            correctness
-            no-eval
-          warn: |
-            suspicious
-            perf
+      - name: Lint with Oxlint
+        run: npm run lint
       - name: Lint with ESLint
         run: npm run eslint
   build:
