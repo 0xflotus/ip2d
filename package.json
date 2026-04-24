@@ -29,7 +29,7 @@
     "eslint-plugin-hex-under": "1.9.2",
     "oxfmt": "0.46.0",
     "oxlint": "1.59.0",
-    "terser": "5.46.1",
+    "terser": "5.46.2",
     "vitest": "4.1.4"
   },
   "engines": {
