@@ -17,20 +17,16 @@
     "eslint": "eslint *.js",
     "prelint": "npm run format",
     "pretest": "npm run build",
-    "test": "vitest run --coverage --logHeapUsage --reporter verbose"
+    "test": "NODE_V8_COVERAGE=coverage node --test --experimental-test-coverage"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@types/node": "25.8.0",
-    "@vitest/coverage-v8": "4.1.6",
-    "@vitest/eslint-plugin": "1.6.17",
     "eslint": "10.4.0",
     "eslint-plugin-de-morgan": "2.1.2",
     "eslint-plugin-hex-under": "1.9.2",
     "oxfmt": "0.50.0",
     "oxlint": "1.59.0",
-    "terser": "5.47.1",
-    "vitest": "4.1.6"
+    "terser": "5.47.1"
   },
   "engines": {
     "node": ">= 22.14.0",

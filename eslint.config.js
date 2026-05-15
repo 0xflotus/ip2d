@@ -1,7 +1,6 @@
 "use strict";
 
 import js from "@eslint/js";
-import vitest from "@vitest/eslint-plugin";
 import plugin from "eslint-plugin-hex-under";
 import { defineConfig } from "eslint/config";
 
@@ -11,16 +10,6 @@ export default defineConfig([
     ignores: ["coverage", "node_modules", "dist"],
     rules: {
       "no-magic-numbers": "off",
-    },
-  },
-  {
-    files: ["*.test.js"],
-    plugins: {
-      vitest,
-    },
-    rules: {
-      ...vitest.configs.all.rules,
-      "vitest/require-to-throw-message": "off",
     },
   },
   {
