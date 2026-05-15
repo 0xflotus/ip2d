@@ -3,8 +3,9 @@
 import js from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
 import plugin from "eslint-plugin-hex-under";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
   {
     ...js.configs.all,
     ignores: ["coverage", "node_modules", "dist"],
@@ -50,4 +51,4 @@ export default [
       ],
     },
   },
-];
+]);
