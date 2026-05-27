@@ -75,7 +75,7 @@
       "warn",
       {
         "limit": 255,
-        "skipBigInt": false
+        "ignoreBigInt": false
       }
     ],
     "hex-under/octal-under": "warn",
