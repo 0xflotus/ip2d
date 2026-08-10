@@ -31,7 +31,7 @@ jobs:
           npm ci
           npm run format -- --check
       - name: Lint with Oxlint
-        run: npm run lint
+        run: npx oxlint *.{js,mjs}
       - name: Lint with ESLint
         run: npm run eslint
   build:
