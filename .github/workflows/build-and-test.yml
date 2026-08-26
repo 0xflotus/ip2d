@@ -38,15 +38,17 @@ jobs:
     name: Testing
     needs: lint
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         include:
           - os: ubuntu-latest
             node-version: 22
           - os: ubuntu-latest
             node-version: 24
+          - os: ubuntu-latest
+            node-version: 26
           - os: ubuntu-24.04-arm
-            node-version: 22
+            node-version: 24
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
