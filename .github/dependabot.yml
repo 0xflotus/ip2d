@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    cooldown:
+      default-days: 5
     assignees:
       - "0xflotus"
   - package-ecosystem: "github-actions"
