@@ -40,15 +40,17 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
+        version: [22, 23, 24, 25, 26, latest]
+        os: [ubuntu-latest, ubuntu-22.04, ubuntu-24.04, ubuntu-26.04, ubuntu-24.04-arm, ubuntu-26.04-arm, macos-15, macos-26, macos-latest, windows-latest]
         include:
           - os: ubuntu-latest
-            node-version: 22
-          - os: ubuntu-latest
-            node-version: 24
-          - os: ubuntu-latest
-            node-version: 26
-          - os: ubuntu-24.04-arm
-            node-version: 24
+            node-version: 21
+          - os: macos-latest
+            node-version: 21
+          - os: windows-latest
+            node-version: 21
+          - os: ubuntu-latest-arm
+            node-version: 21
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
