@@ -58,8 +58,6 @@ jobs:
             node-version: 21
           - os: macos-latest
             node-version: 21
-          - os: ubuntu-latest-arm
-            node-version: 21
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
