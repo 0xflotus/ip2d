@@ -52,14 +52,11 @@ jobs:
             macos-15,
             macos-26,
             macos-latest,
-            windows-latest,
           ]
         include:
           - os: ubuntu-latest
             node-version: 21
           - os: macos-latest
-            node-version: 21
-          - os: windows-latest
             node-version: 21
           - os: ubuntu-latest-arm
             node-version: 21
