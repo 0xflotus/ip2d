@@ -21,21 +21,21 @@ export default defineConfig([
         "warn",
         {
           limit: 255,
-          ignoreBigInt: false,
+          checkBigInt: true,
         },
       ],
       "hex-under/octal-under": [
         "warn",
         {
           limit: 511,
-          ignoreBigInt: false,
+          checkBigInt: true,
         },
       ],
       "hex-under/binary-under": [
         "warn",
         {
           limit: 15,
-          ignoreBigInt: false,
+          checkBigInt: true,
         },
       ],
     },
