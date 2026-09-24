@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "eslint": "10.10.0",
+    "eslint": "10.11.0",
     "eslint-plugin-de-morgan": "2.1.3",
     "eslint-plugin-hex-under": "1.11.3",
     "oxfmt": "0.68.0",
