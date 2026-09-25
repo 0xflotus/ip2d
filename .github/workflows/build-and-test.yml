@@ -7,14 +7,6 @@ on:
   pull_request:
     branches:
       - master
-    paths:
-      - "**.js"
-      - ".github/workflows/*.yml"
-      - "package.json"
-
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   lint:
