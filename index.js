@@ -35,7 +35,7 @@ export const fromIPv4 = (str) => {
     throw new InvalidIPAddressError(`"${str}" must consist of 4 octets, each between 0 and 255.`);
   }
 
-  return parts.reduce((a, b) => (a << 8) | b);
+  return parts.reduce((a, b) => a * 256 + b, 0);
 };
 
 /**
@@ -49,9 +49,9 @@ export const toIPv4 = (num) => {
   if (typeof num !== "number") {
     throw new TypeMismatchError("number", typeof num);
   }
-  if (num < 0 || num > 0xffffffff) {
+  if (!Number.isInteger(num) || num < 0 || num > 0xffffffff) {
     throw new InvalidIPAddressError(
-      `"${num}" is not a valid IPv4 number. It must be between 0 and 4294967295.`,
+      `"${num}" is not a valid IPv4 number. It must be an integer between 0 and 4294967295.`,
     );
   }
   return [24, 16, 8, 0].map((shift) => (num >> shift) & 0xff).join(".");
@@ -70,6 +70,17 @@ export const fromIPv6 = (str) => {
   }
   if (!isIPv6(str)) {
     throw new InvalidIPAddressError(`"${str}" is not a valid IPv6 address.`);
+  }
+
+  if (str.includes(".")) {
+    const lastColon = str.lastIndexOf(":");
+    const ipv4Parts = str
+      .slice(lastColon + 1)
+      .split(".")
+      .map(Number);
+    const firstSection = (ipv4Parts[0] * 256 + ipv4Parts[1]).toString(16);
+    const secondSection = (ipv4Parts[2] * 256 + ipv4Parts[3]).toString(16);
+    str = `${str.slice(0, lastColon + 1)}${firstSection}:${secondSection}`;
   }
 
   let sections = str.split(":");
