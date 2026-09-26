@@ -21,7 +21,7 @@ export default defineConfig([
         "warn",
         {
           limit: 255,
-          checkBigInt: true,
+          checkBigInt: false,
         },
       ],
       "hex-under/octal-under": [

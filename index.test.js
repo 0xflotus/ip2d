@@ -29,6 +29,10 @@ describe("ipv4", () => {
   test("should handle boundaries", () => {
     assert.strictEqual(toIPv4(0), "0.0.0.0");
     assert.strictEqual(fromIPv4("0.0.0.0"), 0);
+    assert.strictEqual(fromIPv4("128.0.0.0"), 2147483648);
+    assert.strictEqual(fromIPv4("200.0.0.1"), 3355443201);
+    assert.strictEqual(toIPv4(fromIPv4("200.0.0.1")), "200.0.0.1");
+    assert.strictEqual(fromIPv4("255.255.255.255"), 4294967295);
     assert.strictEqual(toIPv4(4294967295), "255.255.255.255");
   });
 
@@ -65,6 +69,9 @@ describe("ipv4", () => {
       assert.throws(() => toIPv4(true));
       assert.throws(() => toIPv4(-2));
       assert.throws(() => toIPv4(-100));
+      assert.throws(() => toIPv4(NaN));
+      assert.throws(() => toIPv4(Infinity));
+      assert.throws(() => toIPv4(1.5));
     });
   });
 });
@@ -77,6 +84,11 @@ describe("ipv6", () => {
       44996461372433492606259129078766914650n,
     );
     assert.strictEqual(fromIPv6("2001:4860:4860::8888"), 42541956123769884636017138956568135816n);
+  });
+
+  test("should parse IPv4-embedded IPv6 addresses", () => {
+    assert.strictEqual(fromIPv6("::ffff:192.0.2.1"), (0xffffn << 32n) | 0xc0000201n);
+    assert.strictEqual(fromIPv6("2001:db8::192.0.2.1"), (0x20010db8n << 96n) | 0xc0000201n);
   });
 
   test("should convert bigint to ipv6", () => {
