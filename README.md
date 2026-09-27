@@ -75,7 +75,3 @@ The repository includes a `SECURITY.md` file for reporting vulnerabilities. The 
 This library is licensed under the MIT License, allowing you to use, modify, and distribute the code with minimal restrictions.
 
 You can view the full license [here](./LICENSE).
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/0xflotus/ip2d.svg)](https://starchart.cc/0xflotus/ip2d)
