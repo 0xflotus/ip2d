@@ -6,7 +6,7 @@ updates:
       interval: "daily"
       time: "08:00"
     cooldown:
-      default-days: 5
+      default-days: 2
     assignees:
       - "0xflotus"
   - package-ecosystem: "github-actions"
