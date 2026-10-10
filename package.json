@@ -17,7 +17,7 @@
     "eslint": "eslint *.js",
     "prelint": "npm run format",
     "pretest": "npm run build",
-    "test": "NODE_V8_COVERAGE=coverage node --test --experimental-test-coverage"
+    "test": "tap --allow-incomplete-coverage --reporter=base --passes index.test.js"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -26,6 +26,7 @@
     "eslint-plugin-hex-under": "1.12.4",
     "oxfmt": "0.72.0",
     "oxlint": "1.87.0",
+    "tap": "21.8.0",
     "terser": "5.51.2"
   },
   "engines": {
