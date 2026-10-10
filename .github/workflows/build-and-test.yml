@@ -46,6 +46,7 @@ jobs:
             macos-15,
             macos-26,
             macos-latest,
+            windows-latest,
           ]
         include:
           - os: ubuntu-latest
