@@ -1,5 +1,5 @@
 {
-  "name": "Fedora + Node.js 24.22.1",
+  "name": "Fedora + Node.js 26.12.1",
   "build": {
     "dockerfile": "Dockerfile"
   },
