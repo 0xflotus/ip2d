@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm clean-install
       - name: Run npm format
-        run: npm format -- --check
+        run: npm run format -- --check
   lint:
     name: Lint
     runs-on: ubuntu-latest
