@@ -23,7 +23,7 @@
     "@eslint/js": "10.0.1",
     "eslint": "10.14.0",
     "eslint-plugin-de-morgan": "2.3.0",
-    "eslint-plugin-hex-under": "1.12.5",
+    "eslint-plugin-hex-under": "1.13.0",
     "oxfmt": "0.75.0",
     "oxlint": "1.90.0",
     "tap": "21.8.0",
