@@ -26,7 +26,7 @@
     "eslint-plugin-hex-under": "1.13.0",
     "oxfmt": "0.76.0",
     "oxlint": "1.91.0",
-    "tap": "21.8.0",
+    "tap": "21.8.1",
     "terser": "5.51.2"
   },
   "engines": {
