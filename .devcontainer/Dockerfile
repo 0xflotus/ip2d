@@ -1,6 +1,6 @@
 FROM fedora:43
 
-ARG NODE_VERSION=26.12.1
+ARG NODE_VERSION=26.13.1
 
 RUN dnf install -y ca-certificates curl xz tar \
     && dnf clean all
