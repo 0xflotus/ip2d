@@ -82,4 +82,5 @@ jobs:
           cache: npm
       - run: |
           npm clean-install
+          npm run build
           npm run test
