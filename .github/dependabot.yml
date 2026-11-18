@@ -7,6 +7,8 @@ updates:
       time: "08:00"
     cooldown:
       default-days: 1
+      exclude:
+        - "eslint-plugin-hex-under"
     assignees:
       - "0xflotus"
   - package-ecosystem: "github-actions"
