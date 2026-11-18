@@ -24,7 +24,7 @@
     "eslint": "10.15.0",
     "eslint-plugin-de-morgan": "2.3.0",
     "eslint-plugin-hex-under": "1.13.4",
-    "oxfmt": "0.78.0",
+    "oxfmt": "0.79.0",
     "oxlint": "1.93.0",
     "tap": "21.8.1",
     "terser": "5.51.2"
